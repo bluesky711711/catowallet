@@ -26,7 +26,7 @@
     <link href="/css/color/color-core.css" data-style="styles" rel="stylesheet">
     <!-- User style -->
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
 
     <!-- Modernizr JS -->
@@ -35,19 +35,8 @@
     <!-- Placed js at the end of the document so the pages load faster -->
 
     <!-- jquery latest version -->
-    <script src="js/vendor/jquery-3.1.1.min.js"></script>
-    <!-- Bootstrap framework js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Nivo slider js -->
-    <script src="lib/js/jquery.nivo.slider.js"></script>
-    <!-- ajax-mail js -->
-    <script src="js/ajax-mail.js"></script>
-    <!-- All js plugins included in this file. -->
-    <script src="js/plugins.js"></script>
-    <!-- Main js file that contents all jQuery plugins activation. -->
-    <script src="js/main.js"></script>
+    <script src="/js/vendor/jquery-3.1.1.min.js"></script>
 
-    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
@@ -272,7 +261,7 @@
                                        data-tweet-limit="3">
                                         Tweets by @TwitterDev
                                     </a>
-                                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                    <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
                                 </div>
                             </div>
                         </div>
@@ -310,7 +299,18 @@
     </div>
     <!-- Body main wrapper end -->
 
+    <!-- Bootstrap framework js -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Nivo slider js -->
+    <script src="/lib/js/jquery.nivo.slider.js"></script>
+    <!-- ajax-mail js -->
+    <script src="/js/ajax-mail.js"></script>
+    <!-- All js plugins included in this file. -->
+    <script src="/js/plugins.js"></script>
+    <!-- Main js file that contents all jQuery plugins activation. -->
+    <script src="/js/main.js"></script>
 
+    <script src='http://www.google.com/recaptcha/api.js'></script>
 
 
 
