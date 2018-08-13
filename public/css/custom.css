@@ -1,0 +1,270 @@
+/*--------------------------------------------------------------
+
+    Template:  Misujon Designed Template
+    Author: http://misujon.com/
+    Design and Developed by: http://misujon.com/
+
+---------------------------------------------------------------*/
+
+/* ----------------------------------------------------
+	You can put your custom css code here: 
+-------------------------------------------------------*/
+.sticky-logo{
+    width: 200px;
+    float: left;
+}
+.mean-bar, .mean-container{
+    z-index: 1 !important;
+}
+.mi-header-area{
+    position: relative !important;
+    color: #fff;
+    font-weight: 300;
+    font-size: 13px;
+    text-align: center;
+}
+.mobile-menu-area {
+    background: #39A1CA !important;
+}
+.mi-header-area .top-bar-items{
+    padding: 5px 0px;
+}
+@media (max-width: 500px) {
+    .mi-header-area{
+        font-size: 10px;
+        text-align: center;
+    }
+    .mi-header-area .top-bar-items{
+        padding: 0px 0px;
+    }
+}
+.footer-latest-news{
+    height: 280px;
+    overflow: auto;
+}
+.download-btn li{
+    text-align: center;
+}
+.download-btn li img{
+    width: 220px;
+}
+.about-image:hover{
+    box-shadow: none !important;
+}
+
+.explore-tables {
+    text-align: center;
+}
+
+.explore-tables tbody tr td{
+    padding: 10px;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+#popup {
+    display: none;
+    position: absolute;
+    z-index: 99999999;
+    text-align: center;
+    top: 10%;
+    left: 26%;
+    width: 50%;
+    -webkit-box-shadow: 0 0 125px 0 rgba(0,0,0,1), 0 0 99999px 99999px rgba(0,0,0,.75);
+    box-shadow: 0 0 125px 0 rgba(0,0,0,1), 0 0 99999px 99999px rgba(0,0,0,.75);
+    border-radius: 5px;
+}
+
+
+#popup a{
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size:16px;
+    color:#000;
+    text-transform:uppercase;
+    -webkit-transition: .25s ease;
+    transition: .25s ease;
+}
+
+#popup a:hover {
+    color:#b42b25;
+}
+
+
+.ft-content .col-md-3.col-sm-3.col-xs-6 {
+    height: 150px;
+}
+
+.login-left{
+    background: #39a1ca;
+    min-height: 435px;
+    max-height: auto;
+}
+.login-left img{
+    position: absolute;
+    bottom: -4px;
+}
+.signup-form .row{
+    background: #fff;
+}
+.signup-form .col-sm-8{
+    padding: 0;
+    margin: 0;
+}
+.signup-form .login-left h2, .signup-form .login-left p{
+    color: #fff;
+}
+
+@media (max-width: 500px) {
+    .mi-pull-left {
+        float: left;
+    }
+    .mi-pull-right {
+        float: right;
+    }
+
+    .login-button{
+        float:right;
+        width: 100%;
+    }
+}
+.login-button{
+    float: right;
+}
+
+.form-control{
+    height: 40px;
+    box-shadow: none;
+    color: #969fa4;
+}
+.form-control:focus{
+    border-color: #5cb85c;
+}
+.form-control, .btn{
+    border-radius: 3px;
+}
+.signup-form{
+    width: 400px;
+    margin: 0 auto;
+}
+.signup-form h2{
+    color: #636363;
+    margin: 0 0 15px;
+    position: relative;
+    text-align: center;
+}
+
+.signup-form .hint-text{
+    color: #999;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.signup-form form{
+    color: #999;
+    border-radius: 3px;
+    background: #f2f3f7;
+    padding: 30px;
+    min-height: 350px;
+    max-height: 100%;
+}
+
+.new-customers form{
+    padding: 0px !important;
+}
+.signup-form .form-group{
+    margin-bottom: 20px;
+}
+.signup-form input[type="checkbox"]{
+    margin-top: 3px;
+}
+.signup-form .btn{
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 140px;
+    outline: none !important;
+}
+.signup-form .row div:first-child{
+    padding-right: 10px;
+}
+/*.signup-form .row div:last-child{*/
+/*padding-left: 10px;*/
+/*}*/
+.signup-form a{
+    color: #fff;
+    text-decoration: underline;
+}
+.signup-form a:hover{
+    text-decoration: none;
+}
+.signup-form form a{
+    color: #5cb85c;
+    text-decoration: none;
+}
+.signup-form form a:hover{
+    text-decoration: underline;
+}
+
+.signup-form i{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.signup-form #home{
+    background: none;
+}
+.signup-form .active a{
+    margin-right: 0px !important;
+    background: none !important;
+}
+.signup-form ul{
+    margin-bottom: 40px;
+}
+.signup-form ul li{
+    width: 50% !important;
+    margin: 0;
+    background: none !important;
+}
+
+.signup-form form a, .signup-form form a:focus, .signup-form form a:hover{
+    background: none !important;
+}
+
+#menu1{
+    background: none;
+}
+
+
+
+
+
+
+.about-sheltek-info .footer-address li span{
+    color: #000;
+}
+
+
+
+
+
+@media(max-width:768px) {
+    #popup {
+        display: none;
+        position: absolute;
+        z-index: 1000;
+        text-align: center;
+        top: 10%;
+        left: 10%;
+        width: 80%;
+        -webkit-box-shadow: 0 0 125px 0 rgba(0, 0, 0, 1), 0 0 99999px 99999px rgba(0, 0, 0, .75);
+        box-shadow: 0 0 125px 0 rgba(0, 0, 0, 1), 0 0 99999px 99999px rgba(0, 0, 0, .75);
+        border-radius: 5px;
+    }
+}
