@@ -27,18 +27,34 @@ class WalletController extends Controller
        $walletinfo = $client->getwalletinfo();
        $transactions = $client->listtransactions();
        $accounts = $client->listaccounts();
-
+       $addresses_data = [];
        foreach ($accounts as $key => $value) {
+         Log::info('key');
+         Log::info($key);
          $addresses = $client->getaddressesbyaccount($key);
+         Log::info($addresses);
          foreach ($addresses as $address){
-           
+           $received = 0;
+           $sent = 0;
+           foreach ($transactions as $tran){
+             if ($tran['address'] == $address){
+               if ($tran['category'] == 'receive'){
+                 $received = $received + $tran['amount'];
+               } else if ($tran['category'] == 'send') {
+                 $sent = $sent + $tran['amount'];
+               }
+             }
+           }
+           $balance = $received - $sent;
+           array_push($addresses_data, array("item_addr" => $address, "balance" => $balance));
          }
        }
 
        return view('wallet', [
         'page' => 'wallet',
         'walletinfo' => $walletinfo,
-        'transactions' => $transactions
+        'transactions' => $transactions,
+        'addresses' => $addresses_data
        ]);
     }
 }
