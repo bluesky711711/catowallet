@@ -23,16 +23,16 @@ class WalletController extends Controller
      */
     public function wallet()
     {
-       $client = new jsonRPCClient('http://catocoinrpc:C7B4fzByEtHgXjsj179sbRshNyxANLMCddG5gPHsjx6a@149.28.41.122:51473/');
+       $client = new jsonRPCClient('http://catoportal:69cJOb0PoBFEkijLlNblkU1bhhsi8hha3a@149.28.41.122:6082/');
+
        $walletinfo = $client->getwalletinfo();
        $transactions = $client->listtransactions();
        $accounts = $client->listaccounts();
+
        $addresses_data = [];
+
        foreach ($accounts as $key => $value) {
-         Log::info('key');
-         Log::info($key);
          $addresses = $client->getaddressesbyaccount($key);
-         Log::info($addresses);
          foreach ($addresses as $address){
            $received = 0;
            $sent = 0;
