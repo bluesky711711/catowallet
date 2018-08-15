@@ -23,7 +23,7 @@ class WalletController extends Controller
      */
     public function wallet()
     {
-       $client = new jsonRPCClient('http://catoportal:69cJOb0PoBFEkijLlNblkU1bhhsi8hha3a@149.28.41.122:6082/');
+       $client = new jsonRPCClient('http://catoportal:69cJOb0PoBFEkijLlNblkU1bhhsi8hha3a@207.148.65.130:6082/');
 
        $walletinfo = $client->getwalletinfo();
        $transactions = $client->listtransactions();
