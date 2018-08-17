@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </div>
-            <div class="header-top-bar bg-white">
+            <!-- <div class="header-top-bar bg-white">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-sm-8 col-xs-12">
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div id="sticky-header" class="header-middle-area  transparent-header hidden-xs">
                 <div class="container">
                     <div class="full-width-mega-drop-menu">
