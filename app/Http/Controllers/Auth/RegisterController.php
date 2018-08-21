@@ -6,7 +6,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Http\Request;
+use Mail;
 class RegisterController extends Controller
 {
     /*
@@ -27,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/dashboard';
+    protected $redirectTo = '/2fa';
 
     /**
      * Create a new controller instance.
@@ -68,4 +69,27 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+  public function register(Request $request)
+  {
+    $input = $request->all();
+    $validator = $this->validator($input);
+    $email = $request->input('email');
+
+    if ($validator->passes()) {
+        $user = $this->create($input)->toArray();
+
+        Mail::send('emails.registration', $user, function($message) use ($user) {
+            $message->to('skyclean906@gmail.com', 'From catowallet');
+            $message->from('krylro@gmail.com');
+            $message->subject('Registered on Wallet!');
+        });
+
+        if (auth()->attempt(array('email' => $request->input('email'), 'password' => $request->input('password'))))
+        {
+            return redirect()->to('2fa');
+        }
+    }
+    return back()->with('errors',$validator->errors());
+  }
 }

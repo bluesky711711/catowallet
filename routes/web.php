@@ -21,3 +21,13 @@ Route::get('/home', 'HomeController@index')->name('index');
 Route::get('/wallet', 'WalletController@wallet')->name('wallet');
 Route::get('/fund', 'HomeController@fund')->name('fund');
 Route::get('/download', 'HomeController@download')->name('download');
+Route::get('/complete-registration', 'Auth\RegisterController@completeRegistration');
+
+Route::get('/2fa','PasswordSecurityController@show2faForm');
+Route::post('/generate2faSecret','PasswordSecurityController@generate2faSecret')->name('generate2faSecret');
+Route::post('/2fa','PasswordSecurityController@enable2fa')->name('enable2fa');
+Route::post('/disable2fa','PasswordSecurityController@disable2fa')->name('disable2fa');
+
+Route::post('/2faVerify', function () {
+    return redirect(URL()->previous());
+})->name('2faVerify')->middleware('2fa');
