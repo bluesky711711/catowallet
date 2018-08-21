@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Rpc\jsonRPCClient;
+use App\Wallet;
 use Log;
 use Auth;
 class WalletController extends Controller
@@ -27,7 +28,9 @@ class WalletController extends Controller
        $user = Auth::user();
 
        if (isset($user->wallet_id)){
-         $client = new jsonRPCClient('http://catoportal:69cJOb0PoBFEkijLlNblkU1bhhsi8hha3a@207.148.65.130:6082/');
+         $wallet = Wallet::where('id', $user->wallet_id)->first();
+
+         $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$wallet->rpcpassword.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
 
          $walletinfo = $client->getwalletinfo();
          $transactions = $client->listtransactions();
