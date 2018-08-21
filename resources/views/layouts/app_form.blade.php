@@ -7,7 +7,7 @@
     <title>Catocoin Portal</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="/images/logo/logo.png">
 
@@ -95,27 +95,9 @@
                                         <li><a href="/">Home</a></li>
                                         <li><a href="/fund">Fund Your Account</a></li>
                                         <li><a href="/wallet">Wallet Balance</a></li>
-                                        <li><a href="/download">Explore CatoCoin</a></li>
+                                        <li><a href="download">Explore CatoCoin</a></li>
                                         <!--<li><a href="contact.html">Contact</a></li>-->
-                                        @if (Auth::guest())
-                                        <li id="log1"><a href="#">Log in/Sign up</a></li>
-                                        @else
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                                {{ Auth::user()->name }} <span class="caret"></span>
-                                            </a>
-
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li style="width: 100%;"><a href="/2fa">2FA</a></li>
-                                                <li>
-                                                    <a href="javascript:void(0)" onclick="Logout(event)">Log Out</a>
-                                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                                        {{ csrf_field() }}
-                                                    </form>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        @endif
+                                        <li id="log1"><a href="#">Login/Signup</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -126,7 +108,7 @@
         </header>
         <!-- HEADER AREA END -->
 
-        <div class="signup-form" id="popup" style="">
+        <div class="signup-form" id="popup" style="display:block">
 
             <div class="container-fluid">
                 <div class="row">
@@ -141,33 +123,30 @@
                     </div>
                     <div class="col-sm-8 col-xs-12">
                         <i class="fas fa-times cancel-btn"></i>
-                        <form action="#" method="post">
+                        <form action="" method="post">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a data-toggle="tab" href="#home" id="login-upMn">Login</a></li>
                                 <li><a data-toggle="tab" href="#menu1" id="sign-upMn">Signup</a></li>
                             </ul>
-
                             <div class="tab-content">
                                 <div id="home" class="tab-pane fade in active">
-
                                     <div class="registered-customers mb-50">
-                                        <form action="#">
+                                        <form action="{{ url('/login') }}" method="POST">
+                                            {{csrf_field()}}
                                             <div class="login-account p-30 box-shadow">
                                                 <p>If you have an account with us, Please log in.</p>
-                                                <input type="text" name="name" placeholder="Email Address">
+                                                <input type="email" name="email" placeholder="Email Address">
                                                 <input type="password" name="password" placeholder="Password">
                                                 <p><small><a href="#">Forgot our password?</a></small></p>
                                                 <button class="submit-btn-1" type="submit">login</button>
                                             </div>
                                         </form>
                                     </div>
-
-
-
                                 </div>
                                 <div id="menu1" class="tab-pane fade">
                                     <div class="new-customers mb-50">
-                                        <form action="#">
+                                        <form action="{{ url('/register') }}" method="POST">
+                                            {{ csrf_field() }}
                                             <div class="login-account p-30 box-shadow">
                                                 <!-- <div class="row" style="background: none;">
                                                     <div class="col-sm-6">
@@ -177,10 +156,10 @@
                                                         <input type="text"  placeholder="last Name">
                                                     </div>
                                                 </div> -->
-                                                <input type="text"  placeholder="User Name">
-                                                <input type="text"  placeholder="Email address here...">
-                                                <input type="password"  placeholder="Password">
-                                                <input type="password"  placeholder="Confirm Password">
+                                                <input type="text" name="name"  placeholder="User Name">
+                                                <input type="text" name="email" placeholder="Email address here...">
+                                                <input type="password"  name="password" placeholder="Password">
+                                                <input type="password"  name="password_confirmation" placeholder="Confirm Password">
                                                 <div class="row" style="background: none;">
                                                     <div class="col-sm-6 col-xs-12">
                                                         <button class="submit-btn-1 mt-20" type="submit" value="register">Register</button>
@@ -333,13 +312,6 @@
 
 
     <script>
-    function Logout(e){
-      console.log('logout');
-      e.preventDefault();
-      document.getElementById('logout-form').submit();
-    }
-
-
         $(document).ready(function(){
             $("#log1").click(function(){
                 $("#popup").fadeToggle( "slow" );
@@ -365,8 +337,6 @@
     $("#login-upMn").click(function () {
         $(".login-left").height(435);
     })
-
-
 </script>
 
 </body>

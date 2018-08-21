@@ -1,169 +1,497 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>login</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"  />
-    <link rel="stylesheet" type="text/css" href="css/hover-min.css"  />
-    <link rel="stylesheet" type="text/css" href="css/animate.css"  />
-    <link rel="stylesheet" type="text/css" href="css/themify-icons.css"  />
-	  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"  />
-    <link rel="stylesheet" type="text/css" href="fonts/sitefonts/stylesheet.css"  />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/owl.theme.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
-</head>
+@extends('layouts.app_form')
+@section('content')
+<!-- SLIDER SECTION START -->
+<div class="slider-1 pos-relative slider-overlay">
+		<div class="bend niceties preview-1">
+				<div id="ensign-nivoslider-3" class="slides">
+						<img src="images/slider/1.jpg" alt="" title="#slider-direction-1"  />
+						<img src="images/slider/2.jpg" alt="" title="#slider-direction-2"  />
+						<img src="images/slider/1.jpg" alt="" title="#slider-direction-3"  />
+				</div>
+				<!-- direction 1 -->
+				<div id="slider-direction-1" class="slider-direction">
+						<div class="slider-content text-center">
+								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+										<h4 class="slider-1-title-1">Welcome to <span>Crypto Currency</span></h4>
+								</div>
+								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+										<h1 class="slider-1-title-2">FIND YOUR PERFECT CURRENCY WITH US</h1>
+								</div>
+								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.5s">
+										<p class="slider-1-desc">Lorem consectetur adipiscing elit, sed do eiusmod tempor dolor sit amet <br> contetur  adipiscing elit, sed do  eiusmod tempor incididunt </p>
+								</div>
+								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
+										<a class="slider-button mt-40" href="#">Read More</a>
+								</div>
+						</div>
+				</div>
+				<!-- direction 2 -->
+				<div id="slider-direction-2" class="slider-direction">
+						<div class="slider-content text-left">
+								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+										<h4 class="slider-1-title-1">Welcome to <span>Crypto Currency</span></h4>
+								</div>
+								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+										<h1 class="slider-1-title-2">FIND YOUR PERFECT CURRENCY WITH US</h1>
+								</div>
+								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.5s">
+										<p class="slider-1-desc">Lorem consectetur adipiscing elit, sed do eiusmod tempor dolor sit amet <br> contetur  adipiscing elit, sed do  eiusmod tempor incididunt </p>
+								</div>
+								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
+										<a class="slider-button mt-40" href="#">Read More</a>
+								</div>
+						</div>
+				</div>
+				<!-- direction 2 -->
+				<div id="slider-direction-3" class="slider-direction">
+						<div class="slider-content text-right">
+								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+										<h4 class="slider-1-title-1">Welcome to <span>Crypto Currency</span></h4>
+								</div>
+								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+										<h1 class="slider-1-title-2">FIND YOUR PERFECT CURRENCY WITH US</h1>
+								</div>
+								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.5s">
+										<p class="slider-1-desc">Lorem consectetur adipiscing elit, sed do eiusmod tempor dolor sit amet <br> contetur  adipiscing elit, sed do  eiusmod tempor incididunt </p>
+								</div>
+								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
+										<a class="slider-button mt-40" href="#">Read More</a>
+								</div>
+						</div>
+				</div>
+		</div>
+</div>
+<!-- SLIDER SECTION END -->
 
-<body>
-<wrapper>
-	<header class="form_header">
-    	<div class="header_middle">
-        	<div class="container">
-            	<div class="row">
-                	<div class="col-md-3">
-                    	<div class="logo_left">
-                        	<a href="/"><img src="images/coin_logo.png" alt="logo" class="img-responsive" style="height:45px"/><img src="images/coin_logo_next.png" alt="logo" class="img-responsive" style="height:45px;padding-left:5px"/></a>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                    	<div class="form_header_right">
-                        	<ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                                <li><a href="#"><i class="fa fa-github-alt"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                <li><a href="#"><i class="fa fa-github"></i></a></li>
-                            </ul>
-                            <span><a class="btn btn-default" href="/register">register</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+<!-- Start page content -->
+<section id="page-content" class="page-wrapper">
 
-    <section class="form_body">
-    	<div class="container">
-        	<div class="row">
-            	<div class="col-md-6">
+		<!-- ABOUT SHELTEK AREA START -->
+		<div class="about-sheltek-area ptb-115">
+				<div class="container">
+						<div class="row">
+								<div class="col-sm-6 col-xs-12">
+										<div class="section-title mb-30">
+												<h3>SOME WORD </h3>
+												<h2>ABOUT Crypto Currency</h2>
+										</div>
+										<div class="about-sheltek-info">
+												<p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Crypto Currency</span> is the best theme for  elit, sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliquatd minim veniam, quis nostrud exercitation oris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolo.</p>
+												<p>Lorem is a dummy text do eiusmod tempor dolor sit amet, onsectetur adip iscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliqua Ut enim onsectetur </p>
+												<p>Lorem is a dummy text do eiusmod tempor dolor sit amet, onsectetur adip iscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliqua Ut enim onsectetur </p>
+										</div>
+								</div>
+								<div class="col-sm-6 col-xs-12">
+										<div class="about-image">
+												<a href="fund-your-account.html"><img src="images/about/1.jpg" alt=""></a>
+										</div>
+								</div>
+						</div>
+				</div>
+		</div>
+		<!-- ABOUT SHELTEK AREA END -->
 
-                	<div class="form_content login_form">
-                    	<h2>Signin <span>Login your account</span></h2>
-                        <div class="row">
-                          <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                              {{ csrf_field() }}
-                              @if ($errors->has('email'))
-                                  <span class="help-block">
-                                      <strong>{{ $errors->first('email') }}</strong>
-                                  </span>
-                              @endif
-                              @if ($errors->has('password'))
-                                  <span class="help-block">
-                                      <strong>{{ $errors->first('password') }}</strong>
-                                  </span>
-                              @endif
-                            <div class="col-sm-12">
-                                <div class="form_block">
-                                    <span><i class="ti-email"></i>
-                                    <input type="text" autocomplete="off" placeholder="Email ID" name="email" required/></span>
-                                </div>
-                                <div class="form_block">
-                                    <span><i class="ti-key"></i>
-                                    <input type="password" autocomplete="off" placeholder="Password" name="password" required/></span>
-                                </div>
-                                <div class="check_box">
-                                    <span><input type="checkbox" autocomplete="off" /> Remember me</span>
-                                </div>
-                                <div class="submit_btn">
-                                    <input type="submit" class="btn btn-primary" value="Login" />
-                                </div>
-                            </div>
-                          </form>
-                        </div>
-                    </div>
+		<!-- SERVICES AREA START -->
+		<div class="services-area pb-60">
+				<div class="container">
+						<div class="row">
+								<div class="col-md-12">
+										<div class="section-title-2 text-center">
+												<h2>OUR SERVICES</h2>
+												<p>Crypto Currency is the best theme for  elit, sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliquatd minim veniam, quis nostrud</p>
+										</div>
+								</div>
+						</div>
+						<div class="row">
+								<div class="service-carousel">
+										<!-- service-item -->
+										<div class="col-md-12">
+												<div class="service-item">
+														<div class="service-item-image">
+																<a href="service-details.html"><img src="images/service/1.jpg" alt=""></a>
+														</div>
+														<div class="service-item-info">
+																<h5><a href="service-details.html">Sale Crypto Currency</a></h5>
+																<p>Crypto Currency sale best theme for litdo eiusmod tempor dolor sit amet, conse tetur adiping eiusmo</p>
+														</div>
+												</div>
+										</div>
+										<!-- service-item -->
+										<div class="col-md-12">
+												<div class="service-item">
+														<div class="service-item-image">
+																<a href="service-details.html"><img src="images/service/2.jpg" alt=""></a>
+														</div>
+														<div class="service-item-info">
+																<h5><a href="service-details.html">Buy Crypto Currency</a></h5>
+																<p>Crypto Currency sale best theme for litdo eiusmod tempor dolor sit amet, conse tetur adiping eiusmo</p>
+														</div>
+												</div>
+										</div>
+										<!-- service-item -->
+										<div class="col-md-12">
+												<div class="service-item">
+														<div class="service-item-image">
+																<a href="service-details.html"><img src="images/service/3.jpg" alt=""></a>
+														</div>
+														<div class="service-item-info">
+																<h5><a href="service-details.html">Crypto Currency</a></h5>
+																<p>Crypto Currency sale best theme for litdo eiusmod tempor dolor sit amet, conse tetur adiping eiusmo</p>
+														</div>
+												</div>
+										</div>
+										<!-- service-item -->
+										<div class="col-md-12">
+												<div class="service-item">
+														<div class="service-item-image">
+																<a href="service-details.html"><img src="images/service/4.jpg" alt=""></a>
+														</div>
+														<div class="service-item-info">
+																<h5><a href="service-details.html">Currency Management</a></h5>
+																<p>Crypto Currency sale best theme for litdo eiusmod tempor dolor sit amet, conse tetur adiping eiusmo</p>
+														</div>
+												</div>
+										</div>
+										<!-- service-item -->
+										<div class="col-md-12">
+												<div class="service-item">
+														<div class="service-item-image">
+																<a href="service-details.html"><img src="images/service/4.jpg" alt=""></a>
+														</div>
+														<div class="service-item-info">
+																<h5><a href="service-details.html">Sale Crypto Currency</a></h5>
+																<p>Crypto Currency sale best theme for litdo eiusmod tempor dolor sit amet, conse tetur adiping eiusmo</p>
+														</div>
+												</div>
+										</div>
+								</div>
+						</div>
+				</div>
+		</div>
+		<!-- SERVICES AREA END -->
 
-                </div>
-                <div class="col-md-6">
-                	<div class="banner_right form_body_right">
-                    	<h4>PRE - ICO Start in</h4>
-                        <div id="clockdiv" class="clock_counter_main">
-                            <ul>
-                                <li><span class="days"></span><small>:</small></li>
-                                <li><span class="hours"></span><small>:</small></li>
-                                <li><span class="minutes"></span><small>:</small></li>
-                                <li><span class="seconds"></span></li>
-                            </ul>
-                        </div>
-                        <p>Nulla a condimentum mauris. Sed ut convallis turpis. Ut cursus porta ligula at ultricies.</p>
-                        <img src="images/banner_arcana.png" alt="banner_show_img" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+		<!-- BOOKING AREA START -->
+		<div class="booking-area bg-1 call-to-bg plr-140 pt-75">
+				<div class="container-fluid">
+						<div class="row">
+								<div class="col-md-3 col-sm-4 col-xs-12">
+										<div class="section-title text-white">
+												<h3>Crypto Currency</h3>
+												<h2 class="h1">HOME HERE</h2>
+										</div>
+								</div>
+								<div class="col-md-9 col-sm-8 col-xs-12">
+										<div class="booking-conternt clearfix">
+												<div class="book-house text-white">
+														<h2>GET YOUR CRYPTO CURRENCY </h2>
+														<h2 class="h5">CALL US ON : +01676  707  067  </h2>
+												</div>
+												<div class="booking-imgae">
+														<img src="images/others/booking.png" alt="">
+												</div>
+										</div>
+								</div>
+						</div>
+				</div>
+		</div>
+		<!-- BOOKING AREA END -->
 
-    <footer class="form_footer">
-        <div class="footer_bottom">
-        	<div class="container">
-            	<div class="row">
-                	<div class="col-md-12">
-                    	<h6>Terms of service  &  All rights Reserved</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-</wrapper>
-</body>
-<script src="js/jquery-2.1.4.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script>
-    function getTimeRemaining(endtime) {
-        var t = Date.parse(endtime) - Date.parse(new Date());
-        var seconds = Math.floor((t / 1000) % 60);
-        var minutes = Math.floor((t / 1000 / 60) % 60);
-        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-        var days = Math.floor(t / (1000 * 60 * 60 * 24));
-        return {
-            'total': t,
-            'days': days,
-            'hours': hours,
-            'minutes': minutes,
-            'seconds': seconds
-        };
-    }
 
-    function initializeClock(id, endtime) {
-        var clock = document.getElementById(id);
-        var daysSpan = clock.querySelector('.days');
-        var hoursSpan = clock.querySelector('.hours');
-        var minutesSpan = clock.querySelector('.minutes');
-        var secondsSpan = clock.querySelector('.seconds');
+		<!-- OUR AGENTS AREA START -->
+		<div class="our-agents-area pt-115 pb-55">
+				<div class="container">
+						<div class="row">
+								<div class="col-md-12">
+										<div class="section-title-2 text-center">
+												<h2>OUR AGENTS</h2>
+												<p>Crypto Currency is the best theme for  elit, sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliquatd minim veniam, quis nostrud</p>
+										</div>
+								</div>
+						</div>
+						<div class="our-agents">
+								<div class="row">
+										<div class="agents-carousel">
+					<!-- single-agent -->
+												<div class="col-md-12">
+														<div class="single-agent">
+																<div class="agent-image">
+																		<img src="images/agents/1.jpg" alt="">
+																</div>
+																<div class="agent-info">
+																		<div class="agent-name">
+																				<h5><a href="agent-details.html">Shah M Nawaz</a></h5>
+																				<p>Currency Manager</p>
+																		</div>
+																</div>
+																<div class="agent-info-hover">
+																		<div class="agent-name">
+																				<h5><a href="agent-details.html">Shah M Nawaz</a></h5>
+																				<p>Currency Manager</p>
+																		</div>
+																		<ul class="agent-address">
+																				<li><img src="images/icons/phone-2.png" alt="">+1245  785  659 </li>
+																				<li><img src="images/icons/mail-close.png" alt="">eva@gmail.com </li>
+																		</ul>
+																		<ul class="social-media">
+																				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+																				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+																				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+																				<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+																		</ul>
+																</div>
+														</div>
+												</div>
+					<!-- single-agent -->
+												<div class="col-md-12">
+														<div class="single-agent">
+																<div class="agent-image">
+																		<img src="images/agents/2.jpg" alt="">
+																</div>
+																<div class="agent-info">
+																		<div class="agent-name">
+																				<h5><a href="agent-details.html">Eva Sharlin</a></h5>
+																				<p>Currency Manager</p>
+																		</div>
+																</div>
+																<div class="agent-info-hover">
+																		<div class="agent-name">
+																				<h5><a href="agent-details.html">Eva Sharlin</a></h5>
+																				<p>Currency Manager</p>
+																		</div>
+																		<ul class="agent-address">
+																				<li><img src="images/icons/phone-2.png" alt="">+1245  785  659 </li>
+																				<li><img src="images/icons/mail-close.png" alt="">eva@gmail.com </li>
+																		</ul>
+																		<ul class="social-media">
+																				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+																				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+																				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+																				<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+																		</ul>
+																</div>
+														</div>
+												</div>
+					<!-- single-agent -->
+												<div class="col-md-12">
+														<div class="single-agent">
+																<div class="agent-image">
+																		<img src="images/agents/3.jpg" alt="">
+																</div>
+																<div class="agent-info">
+																		<div class="agent-name">
+																				<h5><a href="agent-details.html">Momen Bhuyan</a></h5>
+																				<p>Currency Converter</p>
+																		</div>
+																</div>
+																<div class="agent-info-hover">
+																		<div class="agent-name">
+																				<h5><a href="agent-details.html">Momen Bhuyan</a></h5>
+																				<p>Currency Converter</p>
+																		</div>
+																		<ul class="agent-address">
+																				<li><img src="images/icons/phone-2.png" alt="">+1245  785  659 </li>
+																				<li><img src="images/icons/mail-close.png" alt="">eva@gmail.com </li>
+																		</ul>
+																		<ul class="social-media">
+																				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+																				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+																				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+																				<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+																		</ul>
+																</div>
+														</div>
+												</div>
+					<!-- single-agent -->
+												<div class="col-md-12">
+														<div class="single-agent">
+																<div class="agent-image">
+																		<img src="images/agents/4.jpg" alt="">
+																</div>
+																<div class="agent-info">
+																		<div class="agent-name">
+																				<h5><a href="agent-details.html">Sarmin Tabassum</a></h5>
+																				<p>Currency Converter</p>
+																		</div>
+																</div>
+																<div class="agent-info-hover">
+																		<div class="agent-name">
+																				<h5><a href="agent-details.html">Sarmin Tabassum</a></h5>
+																				<p>Currency Converter</p>
+																		</div>
+																		<ul class="agent-address">
+																				<li><img src="images/icons/phone-2.png" alt="">+1245  785  659 </li>
+																				<li><img src="images/icons/mail-close.png" alt="">eva@gmail.com </li>
+																		</ul>
+																		<ul class="social-media">
+																				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+																				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+																				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+																				<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+																		</ul>
+																</div>
+														</div>
+												</div>
+												<!-- single-agent -->
+												<div class="col-md-12">
+														<div class="single-agent">
+																<div class="agent-image">
+																		<img src="images/agents/3.jpg" alt="">
+																</div>
+																<div class="agent-info">
+																		<div class="agent-name">
+																				<h5><a href="agent-details.html">Momen Bhuyan</a></h5>
+																				<p>Crypto Currency Manager</p>
+																		</div>
+																</div>
+																<div class="agent-info-hover">
+																		<div class="agent-name">
+																				<h5><a href="agent-details.html">Momen Bhuyan</a></h5>
+																				<p>Crypto Currency Manager</p>
+																		</div>
+																		<ul class="agent-address">
+																				<li><img src="images/icons/phone-2.png" alt="">+1245  785  659 </li>
+																				<li><img src="images/icons/mail-close.png" alt="">eva@gmail.com </li>
+																		</ul>
+																		<ul class="social-media">
+																				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+																				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+																				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+																				<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+																		</ul>
+																</div>
+														</div>
+												</div>
+										</div>
+								</div>
+						</div>
+				</div>
+		</div>
+		<!-- OUR AGENTS AREA END -->
 
-        function updateClock() {
-            var t = getTimeRemaining(endtime);
+		<!-- TESTIMONIAL AREA START -->
+		<div class="testimonial-area pb-115">
+				<div class="container">
+						<div class="row">
+								<div class="col-xs-12">
+										<div class="testimonial">
+												<div class="row">
+														<div class="col-md-8 col-sm-9">
+																<div class="section-title mb-30">
+																		<h3>SOME OF OUR</h3>
+																		<h2 class="h1">HAPPY CLIENTS</h2>
+																</div>
+																<div class="testimonial-carousel dots-right-btm">
+																		<!-- testimonial-item -->
+																		<div class="testimonial-item">
+																				<div class="testimonial-brief">
+																						<p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Crypto Currency</span> is the best theme for  elit, sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, ed do eiusmod tempor incididunt ut labore et lorna aliquatd minim veniam, quis nostrud exercitation oris nisi ut aliquip ex ea commodo equat. Duis aute irure dolo. liquatd minim veniam, quis nostrud exercitation oris nisi ut aliquip ex ea commodo equat. Duis aute irure dolo uis nostrud exercitation</p>
+																				</div>
+																				<h6>Zasica Luci, <span>CEO</span></h6>
+																		</div>
+																		<!-- testimonial-item -->
+																		<div class="testimonial-item">
+																				<div class="testimonial-brief">
+																						<p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Crypto Currency</span> is the best theme for  elit, sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, ed do eiusmod tempor incididunt ut labore et lorna aliquatd minim veniam, quis nostrud exercitation oris nisi ut aliquip ex ea commodo equat. Duis aute irure dolo. liquatd minim veniam, quis nostrud exercitation oris nisi ut aliquip ex ea commodo equat. Duis aute irure dolo uis nostrud exercitation</p>
+																				</div>
+																				<h6>Zasica Luci, <span>CEO</span></h6>
+																		</div>
+																		<!-- testimonial-item -->
+																		<div class="testimonial-item">
+																				<div class="testimonial-brief">
+																						<p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Crypto Currency</span> is the best theme for  elit, sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, ed do eiusmod tempor incididunt ut labore et lorna aliquatd minim veniam, quis nostrud exercitation oris nisi ut aliquip ex ea commodo equat. Duis aute irure dolo. liquatd minim veniam, quis nostrud exercitation oris nisi ut aliquip ex ea commodo equat. Duis aute irure dolo uis nostrud exercitation</p>
+																				</div>
+																				<h6>Zasica Luci, <span>CEO</span></h6>
+																		</div>
+																</div>
+														</div>
+														<div class="col-md-4 col-sm-3">
+																<div class="testimonial-image">
+																		<img src="images/others/testimonial.jpg" alt="">
+																</div>
+														</div>
+												</div>
+										</div>
+								</div>
+						</div>
+				</div>
+		</div>
+		<!-- TESTIMONIAL AREA END -->
 
-            daysSpan.innerHTML = t.days;
-            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
 
-            if (t.total <= 0) {
-                clearInterval(timeinterval);
-            }
-        }
+		<!-- BRAND AREA START -->
+		<div class="brand-area pb-115">
+				<div class="container">
+						<div class="row">
+								<div class="brand-carousel">
+										<!-- brand-item -->
+										<div class="col-md-12">
+												<div class="brand-item">
+														<img src="images/brand/1.png" alt="">
+												</div>
+										</div>
+										<!-- brand-item -->
+										<div class="col-md-12">
+												<div class="brand-item">
+														<img src="images/brand/2.png" alt="">
+												</div>
+										</div>
+										<!-- brand-item -->
+										<div class="col-md-12">
+												<div class="brand-item">
+														<img src="images/brand/3.png" alt="">
+												</div>
+										</div>
+										<!-- brand-item -->
+										<div class="col-md-12">
+												<div class="brand-item">
+														<img src="images/brand/4.png" alt="">
+												</div>
+										</div>
+										<!-- brand-item -->
+										<div class="col-md-12">
+												<div class="brand-item">
+														<img src="images/brand/5.png" alt="">
+												</div>
+										</div>
+										<!-- brand-item -->
+										<div class="col-md-12">
+												<div class="brand-item">
+														<img src="images/brand/1.png" alt="">
+												</div>
+										</div>
+										<!-- brand-item -->
+										<div class="col-md-12">
+												<div class="brand-item">
+														<img src="images/brand/4.png" alt="">
+												</div>
+										</div>
+								</div>
+						</div>
+				</div>
+		</div>
+		<!-- BRAND AREA END -->
 
-        updateClock();
-        var timeinterval = setInterval(updateClock, 1000);
-    }
-
-    var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
-    initializeClock('clockdiv', deadline);
-</script>
-
-</html>
+		<!-- SUBSCRIBE AREA START -->
+		<div class="subscribe-area bg-blue call-to-bg plr-140 ptb-50">
+				<div class="container-fluid">
+						<div class="row">
+								<div class="col-md-3 col-sm-4 col-xs-12">
+										<div class="section-title text-white">
+												<h3>SUBSCRIBE</h3>
+												<h2 class="h1">NEWSLETTER</h2>
+										</div>
+								</div>
+								<div class="col-md-9 col-sm-8 col-xs-12">
+										<div class="subscribe">
+												<form action="#">
+														<input type="text" name="subscribe" placeholder="Enter yur email here...">
+														<button type="submit" value="send">Send</button>
+												</form>
+										</div>
+								</div>
+						</div>
+				</div>
+		</div>
+		<!-- SUBSCRIBE AREA END -->
+</section>
+@endsection

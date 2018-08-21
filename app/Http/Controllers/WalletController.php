@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Rpc\jsonRPCClient;
 use Log;
+use Auth;
 class WalletController extends Controller
 {
     /**
@@ -13,7 +14,7 @@ class WalletController extends Controller
      */
     public function __construct()
     {
-      //$this->middleware('auth');
+      $this->middleware(['auth', '2fa'] );
     }
 
     /**
@@ -23,38 +24,49 @@ class WalletController extends Controller
      */
     public function wallet()
     {
-       $client = new jsonRPCClient('http://catoportal:69cJOb0PoBFEkijLlNblkU1bhhsi8hha3a@207.148.65.130:6082/');
+       $user = Auth::user();
 
-       $walletinfo = $client->getwalletinfo();
-       $transactions = $client->listtransactions();
-       $accounts = $client->listaccounts();
+       if (isset($user->wallet_id)){
+         $client = new jsonRPCClient('http://catoportal:69cJOb0PoBFEkijLlNblkU1bhhsi8hha3a@207.148.65.130:6082/');
 
-       $addresses_data = [];
+         $walletinfo = $client->getwalletinfo();
+         $transactions = $client->listtransactions();
+         $accounts = $client->listaccounts();
 
-       foreach ($accounts as $key => $value) {
-         $addresses = $client->getaddressesbyaccount($key);
-         foreach ($addresses as $address){
-           $received = 0;
-           $sent = 0;
-           foreach ($transactions as $tran){
-             if ($tran['address'] == $address){
-               if ($tran['category'] == 'receive'){
-                 $received = $received + $tran['amount'];
-               } else if ($tran['category'] == 'send') {
-                 $sent = $sent + $tran['amount'];
+         $addresses_data = [];
+
+         foreach ($accounts as $key => $value) {
+           $addresses = $client->getaddressesbyaccount($key);
+           foreach ($addresses as $address){
+             $received = 0;
+             $sent = 0;
+             foreach ($transactions as $tran){
+               if ($tran['address'] == $address){
+                 if ($tran['category'] == 'receive'){
+                   $received = $received + $tran['amount'];
+                 } else if ($tran['category'] == 'send') {
+                   $sent = $sent + $tran['amount'];
+                 }
                }
              }
+             $balance = $received - $sent;
+             array_push($addresses_data, array("item_addr" => $address, "balance" => $balance));
            }
-           $balance = $received - $sent;
-           array_push($addresses_data, array("item_addr" => $address, "balance" => $balance));
          }
+
+         return view('wallet', [
+          'page' => 'wallet',
+          'walletinfo' => $walletinfo,
+          'transactions' => $transactions,
+          'addresses' => $addresses_data
+         ]);
        }
 
        return view('wallet', [
         'page' => 'wallet',
-        'walletinfo' => $walletinfo,
-        'transactions' => $transactions,
-        'addresses' => $addresses_data
+        'walletinfo' => null,
+        'transactions' => null,
+        'addresses' => null
        ]);
     }
 }

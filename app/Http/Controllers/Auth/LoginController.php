@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/dashboard';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -39,20 +39,6 @@ class LoginController extends Controller
          $this->middleware('guest', ['except' => 'logout']);
      }
 
-     public function adminlogin(Request $request){
-         $user_id = $request->input('id');
-         $user = User::where('id', $user_id)->first();
-         Log::info($user_id);
-         $key = $request->input('key');
-         if ($user->admin_token == $key){
-           $user->admin_token = "";
-           $user->save();
-           if (auth()->login($user)){
-             return redirect()->to('/dashboard');
-           }
-         }
-         return redirect()->to('login');
-     }
 
      public function login(Request $request)
      {
@@ -63,7 +49,7 @@ class LoginController extends Controller
 
          if (auth()->attempt(array('email' => $request->input('email'), 'password' => $request->input('password'))))
          {
-             return redirect()->to('/dashboard');
+             return redirect()->to('/home');
          }else{
              return back()->with('error','your username and password are wrong.');
          }
