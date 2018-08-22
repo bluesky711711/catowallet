@@ -27,10 +27,10 @@ class WalletController extends Controller
     public function wallet()
     {
        $user = Auth::user();
-       $mfa = PasswordSecurity::where('user_id', $user->id)->first();
-       if (!isset($mfa) || !$mfa->google2fa_enable) {
-         return redirect('/2fa');
-       }
+       // $mfa = PasswordSecurity::where('user_id', $user->id)->first();
+       // if (!isset($mfa) || !$mfa->google2fa_enable) {
+       //   return redirect('/2fa');
+       // }
        if (isset($user->wallet_id)){
          $wallet = Wallet::where('id', $user->wallet_id)->first();
 
