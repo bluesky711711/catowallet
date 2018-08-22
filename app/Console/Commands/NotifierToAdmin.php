@@ -46,7 +46,7 @@ class NotifierToAdmin extends Command
         Mail::raw("This user has not wallet server connection. user email: ".$a->email, function($message) use ($a)
         {
           $message->from('catowallet@site.com');
-          $message->to('jjj092353@gmail.com')->subject('Notification From CatoWallet!');
+          $message->to('skyclean906@gmail.com')->subject('Notification From CatoWallet!');
         });
       }
       $this->info('Email has been sent successfully');
