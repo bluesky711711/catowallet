@@ -49,6 +49,6 @@ class NotifierToAdmin extends Command
           $message->to('skyclean906@gmail.com')->subject('Notification From CatoWallet!');
         });
       }
-      $this->info('Email has been sent successfully');
+      $this->info('Email has been sent successfully to skyclean906@gmail.com');
     }
 }
