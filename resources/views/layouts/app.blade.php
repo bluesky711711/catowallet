@@ -98,7 +98,7 @@
                                         <li><a href="/download">Explore CatoCoin</a></li>
                                         <!--<li><a href="contact.html">Contact</a></li>-->
                                         @if (Auth::guest())
-                                        <li id="log1"><a href="/login">Log in/Sign up</a></li>
+                                        <li><a href="/login">Log in/Sign up</a></li>
                                         @else
                                         <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
