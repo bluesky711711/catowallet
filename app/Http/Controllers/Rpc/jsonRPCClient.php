@@ -83,6 +83,7 @@ class jsonRPCClient {
 
          } else {
            throw new Exception('Unable to connect to'. $this->uri);
+           return null;
          }
 
          /*
