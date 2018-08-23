@@ -31,23 +31,29 @@ class WalletController extends Controller
        // if (!isset($mfa) || !$mfa->google2fa_enable) {
        //   return redirect('/2fa');
        // }
-       if (isset($user->wallet_id)){
-         $wallet = Wallet::where('id', $user->wallet_id)->first();
-
+       $wallets = Wallet::where('user_id', $user->id)->get();
+       $balance = 0;
+       $transactions = [];
+       $addresses_data = [];
+       $walletinfo = null;
+       foreach ($wallets as $wallet) {
+         //$wallet = Wallet::where('id', $user->wallet_id)->first();
          $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$wallet->rpcpassword.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
 
          $walletinfo = $client->getwalletinfo();
-         $transactions = $client->listtransactions();
-         $accounts = $client->listaccounts();
+         if ($walletinfo == null) continue;
+         $balance = $balance + $walletinfo['balance'];
+         $transactions_item = $client->listtransactions();
 
-         $addresses_data = [];
+         $accounts_item = $client->listaccounts();
 
-         foreach ($accounts as $key => $value) {
+         foreach ($accounts_item as $key => $value) {
            $addresses = $client->getaddressesbyaccount($key);
            foreach ($addresses as $address){
              $received = 0;
              $sent = 0;
-             foreach ($transactions as $tran){
+             foreach ($transactions_item as $tran){
+               array_push($transactions, $tran);
                if ($tran['address'] == $address){
                  if ($tran['category'] == 'receive'){
                    $received = $received + $tran['amount'];
@@ -60,20 +66,15 @@ class WalletController extends Controller
              array_push($addresses_data, array("item_addr" => $address, "balance" => $balance));
            }
          }
-
-         return view('wallet', [
-          'page' => 'wallet',
-          'walletinfo' => $walletinfo,
-          'transactions' => $transactions,
-          'addresses' => $addresses_data
-         ]);
        }
 
-       return view('wallet', [
-        'page' => 'wallet',
-        'walletinfo' => null,
-        'transactions' => null,
-        'addresses' => null
-       ]);
+
+                return view('wallet', [
+                 'page' => 'wallet',
+                 'walletinfo' => $walletinfo,
+                 'balance' => $balance,
+                 'transactions' => $transactions,
+                 'addresses' => $addresses_data
+                ]);
     }
 }
