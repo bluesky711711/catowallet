@@ -32,9 +32,10 @@ class WalletController extends Controller
        //   return redirect('/2fa');
        // }
        $wallets = Wallet::where('user_id', $user->id)->get();
-       $balance = 0;
+       $wallet_balance = 0;
        $transactions = [];
        $addresses_data = [];
+       $masternode_data = [];
        $walletinfo = null;
        foreach ($wallets as $wallet) {
          //$wallet = Wallet::where('id', $user->wallet_id)->first();
@@ -42,29 +43,26 @@ class WalletController extends Controller
 
          $walletinfo = $client->getwalletinfo();
          if ($walletinfo == null) continue;
-         $balance = $balance + $walletinfo['balance'];
-         $transactions_item = $client->listtransactions();
+         $wallet_balance = $wallet_balance + $walletinfo['balance'];
+         $transactions_item = $client->listtransactions("*", 50);
 
-         $accounts_item = $client->listaccounts();
+         $addresses = $client->listaddressgroupings();
 
-         foreach ($accounts_item as $key => $value) {
-           $addresses = $client->getaddressesbyaccount($key);
-           foreach ($addresses as $address){
-             $received = 0;
-             $sent = 0;
-             foreach ($transactions_item as $tran){
-               array_push($transactions, $tran);
-               if ($tran['address'] == $address){
-                 if ($tran['category'] == 'receive'){
-                   $received = $received + $tran['amount'];
-                 } else if ($tran['category'] == 'send') {
-                   $sent = $sent + $tran['amount'];
-                 }
+         foreach ($transactions_item as $tran){
+           array_push($transactions, $tran);
+         }
+         foreach ($addresses[0] as $address){
+             array_push($addresses_data, array("item_addr" => $address[0], "balance" => $address[1]));
+             $masternodes = $client->listmasternodes($address[0]);
+             if (count($masternodes) > 0){
+               $masternode = $masternodes[0];
+               $masternode['balance'] = $address[1];
+               $masternode['alias'] = "";
+               if (isset($address[2])){
+                 $masternode['alias'] = $address[2];
                }
+               array_push($masternode_data, $masternode);
              }
-             $balance = $received - $sent;
-             array_push($addresses_data, array("item_addr" => $address, "balance" => $balance));
-           }
          }
        }
 
@@ -72,9 +70,10 @@ class WalletController extends Controller
                 return view('wallet', [
                  'page' => 'wallet',
                  'walletinfo' => $walletinfo,
-                 'balance' => $balance,
+                 'balance' => $wallet_balance,
                  'transactions' => $transactions,
-                 'addresses' => $addresses_data
+                 'addresses' => $addresses_data,
+                 'masternodes' => $masternode_data
                 ]);
     }
 }

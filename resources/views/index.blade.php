@@ -20,9 +20,9 @@
 								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.5s">
 										<p class="slider-1-desc">Lorem consectetur adipiscing elit, sed do eiusmod tempor dolor sit amet <br> contetur  adipiscing elit, sed do  eiusmod tempor incididunt </p>
 								</div>
-								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
+								<!-- <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
 										<a class="slider-button mt-40" href="#">Read More</a>
-								</div>
+								</div> -->
 						</div>
 				</div>
 				<!-- direction 2 -->
@@ -37,9 +37,9 @@
 								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.5s">
 										<p class="slider-1-desc">Lorem consectetur adipiscing elit, sed do eiusmod tempor dolor sit amet <br> contetur  adipiscing elit, sed do  eiusmod tempor incididunt </p>
 								</div>
-								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
+								<!-- <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
 										<a class="slider-button mt-40" href="#">Read More</a>
-								</div>
+								</div> -->
 						</div>
 				</div>
 				<!-- direction 2 -->
@@ -54,9 +54,9 @@
 								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.5s">
 										<p class="slider-1-desc">Lorem consectetur adipiscing elit, sed do eiusmod tempor dolor sit amet <br> contetur  adipiscing elit, sed do  eiusmod tempor incididunt </p>
 								</div>
-								<div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
+								<!-- <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
 										<a class="slider-button mt-40" href="#">Read More</a>
-								</div>
+								</div> -->
 						</div>
 				</div>
 		</div>
