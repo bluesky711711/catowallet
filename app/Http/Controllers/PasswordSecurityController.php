@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\PasswordSecurity;
+use Illuminate\Support\Facades\Hash;
 class PasswordSecurityController extends Controller
 {
   public function show2faForm(Request $request){
@@ -62,9 +63,9 @@ class PasswordSecurityController extends Controller
             return redirect()->back()->with("error","Your  password does not matches with your account password. Please try again.");
         }
 
-        $validatedData = $request->validate([
-            'current-password' => 'required',
-        ]);
+        // $validatedData = $request->validate([
+        //     'current-password' => 'required',
+        // ]);
         $user = Auth::user();
         $user->passwordSecurity->google2fa_enable = 0;
         $user->passwordSecurity->save();

@@ -95,7 +95,7 @@
                                         <li><a href="/">Home</a></li>
                                         <li><a href="/fund">Fund Your Account</a></li>
                                         <li><a href="/wallet">Wallet Balance</a></li>
-                                        <li><a href="download">Explore CatoCoin</a></li>
+                                        <li><a target="_blank" href="https://catocoin.net">Explore CatoCoin</a></li>
                                         <!--<li><a href="contact.html">Contact</a></li>-->
                                         <li id="log1"><a href="#">Login/Signup</a></li>
                                     </ul>

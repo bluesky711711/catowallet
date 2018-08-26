@@ -1,4 +1,5 @@
 <?php
+use Log;
 class jsonRPCClient {
     /*
      * Debug state
@@ -27,7 +28,7 @@ class jsonRPCClient {
      *  @param String $url
      *  @param Boolean $debug
      */
-    public function __construct($uri, $debug = false) {
+    public function __construct($uri, $debug = true) {
         $this->uri = $uri;
         empty($proxy) ? $this->proxy = '' : $this->proxy = $proxy;
         empty($debug) ? $this->debug = false : $this->debug = true;
@@ -40,6 +41,7 @@ class jsonRPCClient {
      * @param $params (Array)
      * @return Array
      */
+
     public function __call($method, $params) {
          /* finds whether $method is a scalar or not */
          if(!is_scalar($method)) {
@@ -51,6 +53,7 @@ class jsonRPCClient {
          } else {
             throw new Exception("Params must be given as array.");
          }
+
          $this->id = rand(0,99999);
          if($this->notification) {
            $currentId = NULL;

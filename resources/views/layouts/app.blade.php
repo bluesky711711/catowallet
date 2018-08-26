@@ -95,7 +95,7 @@
                                         <li><a href="/">Home</a></li>
                                         <li><a href="/fund">Fund Your Account</a></li>
                                         <li><a href="/wallet">Wallet Balance</a></li>
-                                        <li><a href="/download">Explore CatoCoin</a></li>
+                                        <li><a target="_blank" href="https://catocoin.net">Explore CatoCoin</a></li>
                                         <!--<li><a href="contact.html">Contact</a></li>-->
                                         @if (Auth::guest())
                                         <li><a href="/login">Log in/Sign up</a></li>
@@ -363,7 +363,12 @@
         $(".login-left").height(435);
     })
 
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    console.log('chrome', isChrome);
 
+    if (!isChrome){
+      alert('We require to run on chrome browser!');
+    }
 </script>
 
 </body>
