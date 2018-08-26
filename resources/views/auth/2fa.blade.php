@@ -12,8 +12,8 @@
                            <p>To Enable Two Factor Authentication on your Account, you need to do following steps</p>
                            <strong>
                            <ol>
-                               <li>Click on Generate Secret Button , To Generate a Unique secret QR code for your profile</li>
-                               <li>Verify the OTP from Google Authenticator Mobile App</li>
+                               <li style="font-size:15px">CLICK ON GENERATE SECRET BUTTON , TO GENERATE A UNIQUE SECRET QR CODE FOR YOUR PROFILE.  VERIFY THE OTP FROM GOOGLE AUTHENTICATOR MOBILE APP</li>
+                               <li style="font-size:15px">WE HIGHLY RECEOMMEND USING 2FA OTHERWISE YOU PUT YOUR CATOCOIN ASSETS AS RISK OF THEFT BY HACKERS.</li>
                            </ol>
                            </strong>
                            <br/>

@@ -96,6 +96,7 @@
                                         <li><a href="/fund">Fund Your Account</a></li>
                                         <li><a href="/wallet">Wallet Balance</a></li>
                                         <li><a target="_blank" href="https://catocoin.net">Explore CatoCoin</a></li>
+                                        <li><a target="_blank" href="#">CatoCoin News</a></li>
                                         <!--<li><a href="contact.html">Contact</a></li>-->
                                         <li id="log1"><a href="#">Login/Signup</a></li>
                                     </ul>
@@ -148,14 +149,14 @@
                                         <form action="{{ url('/register') }}" method="POST">
                                             {{ csrf_field() }}
                                             <div class="login-account p-30 box-shadow">
-                                                <!-- <div class="row" style="background: none;">
+                                                <div class="row" style="background: none;">
                                                     <div class="col-sm-6">
-                                                        <input type="text"  placeholder="First Name">
+                                                        <input type="text"  name="first_name" placeholder="First Name">
                                                     </div>
                                                     <div class="col-sm-6">
-                                                        <input type="text"  placeholder="last Name">
+                                                        <input type="text"  name="last_name" placeholder="Last Name">
                                                     </div>
-                                                </div> -->
+                                                </div>
                                                 <input type="text" name="name"  placeholder="User Name">
                                                 <input type="text" name="email" placeholder="Email address here...">
                                                 <input type="password"  name="password" placeholder="Password">
