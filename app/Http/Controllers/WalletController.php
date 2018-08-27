@@ -53,16 +53,19 @@ class WalletController extends Controller
          }
          foreach ($addresses[0] as $address){
              array_push($addresses_data, array("item_addr" => $address[0], "balance" => $address[1]));
-             $masternodes = $client->listmasternodes($address[0]);
-             if (count($masternodes) > 0){
-               $masternode = $masternodes[0];
-               $masternode['balance'] = $address[1];
-               $masternode['alias'] = "";
-               if (isset($address[2])){
-                 $masternode['alias'] = $address[2];
-               }
-               array_push($masternode_data, $masternode);
-             }
+         }
+
+         $masternodeconfs = $client->listmasternodeconf();
+         foreach ($masternodeconfs as $masternodeconf){
+           $masternodes = $client->listmasternodes($masternodeconf['txHash']);
+           if (count($masternodes) > 0){
+             $masternode = $masternodes[0];
+             $masternodeconf['public_key'] = $masternode['addr'];
+             $masternodeconf['lastseen'] = $masternode["lastseen"];
+             $masternodeconf["activetime"] = $masternode["activetime"];
+             $masternodeconf["version"] = $masternode["version"];
+           }
+           array_push($masternode_data, $masternodeconf);
          }
        }
 
