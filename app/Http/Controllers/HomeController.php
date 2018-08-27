@@ -41,6 +41,13 @@ class HomeController extends Controller
         ]);
     }
 
+    public function news()
+    {
+        return view('news', [
+          'page' => 'news'
+        ]);
+    }
+
     public function reauthenticate(Request $request)
     {
         // get the logged in user

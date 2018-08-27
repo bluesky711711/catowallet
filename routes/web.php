@@ -21,6 +21,7 @@ Route::get('/', 'HomeController@index')->name('index');
 Route::get('/home', 'HomeController@index')->name('index');
 Route::get('/wallet', 'WalletController@wallet')->name('wallet');
 Route::get('/fund', 'HomeController@fund')->name('fund');
+Route::get('/news', 'HomeController@news')->name('news');
 Route::get('/download', 'HomeController@download')->name('download');
 Route::get('/complete-registration', 'Auth\RegisterController@completeRegistration');
 

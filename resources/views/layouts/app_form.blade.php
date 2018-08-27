@@ -96,7 +96,7 @@
                                         <li><a href="/fund">Fund Your Account</a></li>
                                         <li><a href="/wallet">Wallet Balance</a></li>
                                         <li><a target="_blank" href="https://catocoin.net">Explore CatoCoin</a></li>
-                                        <li><a target="_blank" href="#">CatoCoin News</a></li>
+                                        <li><a href="/news">CatoCoin News</a></li>
                                         <!--<li><a href="contact.html">Contact</a></li>-->
                                         <li id="log1"><a href="#">Login/Signup</a></li>
                                     </ul>
@@ -192,6 +192,7 @@
                                     <li><a href="/fund-your-account">Fund Your Account</a></li>
                                     <li><a href="/wallet">Wallet Balance</a></li>
                                     <li><a href="/download">Explore CatoCoin</a></li>
+                                    <li><a href="/news">CatoCoin News</a></li>
                                     <!--<li><a href="contact.html">Contact</a></li>-->
                                     <li id="log2"><a href="#">Login/Signup</a></li>
                                 </ul>
@@ -204,7 +205,7 @@
         <!-- MOBILE MENU AREA END -->
 
 
-        @yield('content');
+        @yield('content')
 
         <!-- Start footer area -->
         <footer id="footer" class="footer-area bg-2 bg-opacity-black-90">
