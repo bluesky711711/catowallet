@@ -49,6 +49,14 @@ class WalletController extends Controller
          $addresses = $client->listaddressgroupings();
 
          foreach ($transactions_item as $tran){
+           $tran['type'] = $tran['category'];
+           if ((isset($tran["generated"]) && $tran["generated"] == true) && $tran['vout'] == 2 && $tran['category']=="receive"){
+             $tran['type'] = "Masternode Reward";
+           }
+           if ($tran['account'] == "") {
+             $account = $client->getaccount($tran['address']);
+             $tran['account'] = $account;
+           }
            array_push($transactions, $tran);
          }
          foreach ($addresses[0] as $address){
