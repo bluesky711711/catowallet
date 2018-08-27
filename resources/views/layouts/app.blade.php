@@ -96,7 +96,7 @@
                                         <li><a href="/fund">Fund Your Account</a></li>
                                         <li><a href="/wallet">Wallet Balance</a></li>
                                         <li><a target="_blank" href="https://catocoin.net">Explore CatoCoin</a></li>
-                                        <li><a target="_blank" href="#">CatoCoin News</a></li>
+                                        <li><a href="/news">CatoCoin News</a></li>
                                         <!--<li><a href="contact.html">Contact</a></li>-->
                                         @if (Auth::guest())
                                         <li><a href="/login">Log in/Sign up</a></li>
@@ -221,17 +221,14 @@
             </div>
         </div>
         <!-- MOBILE MENU AREA END -->
-
-
-        @yield('content');
-
+        @yield('content')
         <!-- Start footer area -->
         <footer id="footer" class="footer-area bg-2 bg-opacity-black-90">
             <div class="footer-top pt-110 pb-80">
                 <div class="container">
                     <div class="row">
                         <!-- footer-address -->
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="col-lg-6 col-md-3 col-sm-6 col-xs-12">
                             <div class="footer-widget">
                                 <h6 class="footer-titel">GET IN TOUCH</h6>
                                 <ul class="footer-address">
@@ -266,7 +263,7 @@
                             </div>
                         </div>
                         <!-- footer-latest-news -->
-                        <div class="col-lg-6 col-md-5 hidden-sm col-xs-12">
+                        <!-- <div class="col-lg-6 col-md-5 hidden-sm col-xs-12">
                             <div class="footer-widget middle">
                                 <h6 class="footer-titel">LATEST NEWS</h6>
                                 <div class="footer-latest-news">
@@ -278,9 +275,9 @@
                                     <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- footer-contact -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
                             <div class="footer-widget">
                                 <h6 class="footer-titel">QUICK CONTACT</h6>
                                 <div class="footer-contact">
