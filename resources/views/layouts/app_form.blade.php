@@ -30,7 +30,7 @@
 
 
     <!-- Modernizr JS -->
-    <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- <script src="/js/vendor/modernizr-2.8.3.min.js"></script> -->
 
     <!-- Placed js at the end of the document so the pages load faster -->
 
@@ -118,7 +118,7 @@
                         <h2>Login</h2>
                         <br>
                         <p>
-                            Get access to your Orders, Wishlist and Recommendations
+                            Get access to your wallet balance, transactions and masternodes (if applicable)
                         </p>
                         <img src="images/login-left.png" class="img-responsive">
                     </div>
@@ -137,7 +137,13 @@
                                             <div class="login-account p-30 box-shadow">
                                                 <p>If you have an account with us, Please log in.</p>
                                                 <input type="email" name="email" placeholder="Email Address">
+                                                @if ($errors->has('email'))
+                                                    <span class="mdl-textfield__error">{{ $errors->first('email') }}</span>
+                                                @endif
                                                 <input type="password" name="password" placeholder="Password">
+                                                @if ($errors->has('password'))
+                                                    <span class="mdl-textfield__error">{{ $errors->first('password') }}</span>
+                                                @endif
                                                 <p><small><a href="#">Forgot our password?</a></small></p>
                                                 <button class="submit-btn-1" type="submit">login</button>
                                             </div>

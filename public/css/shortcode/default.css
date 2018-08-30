@@ -11,29 +11,29 @@
   1.General
   2. Typography
   3. transtion
-  4 buttons 
-  5. Input 
-  6. Basic margin padding 
-      6.1 Margin top 
-      6.2 Margin right  
-      6.3 Margin bottom 
-      6.4 Margin left 
+  4 buttons
+  5. Input
+  6. Basic margin padding
+      6.1 Margin top
+      6.2 Margin right
+      6.3 Margin bottom
+      6.4 Margin left
       6.5 Padding top
-      6.6 Padding right 
-      6.7 Padding bottom  
-      6.8 Padding left 
-      6.9 Page section padding 
-      6.10 Page section margin 
+      6.6 Padding right
+      6.7 Padding bottom
+      6.8 Padding left
+      6.9 Page section padding
+      6.10 Page section margin
   7. Extra margin and padding
-  8. Scroll Up 
+  8. Scroll Up
   9. Extra class (Custom cloumn)
   10. Text color
-  11. Background variation set 
+  11. Background variation set
   12. Opacity background
   13. image background
   14. separator
-  15. Section title 1 
-  16. section title 2 
+  15. Section title 1
+  16. section title 2
 ======================================
 [ End table content ]
 ======================================*/
@@ -116,7 +116,7 @@ h6,
 }
 h5, .h5,
 h6, .h6 {
-  font-family: 'Montserrat', sans-serif; 
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 }
 h1, .h1 {
@@ -172,8 +172,8 @@ h4 a,
 h5 a,
 h6 a,
 span a,
-li a { 
-  color: inherit 
+li a {
+  color: inherit
 }
 p {
   color: #606060;
@@ -207,8 +207,8 @@ ul {
   margin: 0px;
   padding: 0px;
 }
-li { 
-  list-style: none; 
+li {
+  list-style: none;
 }
 hr {
   border-bottom: 1px solid #eeeeee;
@@ -332,7 +332,7 @@ span.tooltip-content {
 a.button-small:after {
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
-} 
+}
  .share ul,
 .share:hover ul {
   transition: all 0.4s ease-in-out;
@@ -348,10 +348,10 @@ select,
 textarea {
   -webkit-transition: all 0.5s ease-out 0s;
   transition: all 0.5s ease-out 0s;
-} 
+}
 
 /*************************
-    4 buttons 
+    4 buttons
 *************************/
 .button {
   background: transparent;
@@ -379,15 +379,15 @@ textarea {
 .btn-border { border: 1px solid #fff; }
 
 /*************************
-  5. Input 
+  5. Input
 *************************/
-input[type="text"], 
-input[type="email"], 
+input[type="text"],
+input[type="email"],
 input[type="password"] {
   background: transparent;
   border: 1px solid #e1e1e1;
   color: #606060;
-  font-family: 'Montserrat', sans-serif;  
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 300;
   height: 40px;
@@ -495,7 +495,7 @@ textarea:focus {
   height: 40px;
   line-height: 38px;
   margin-bottom: 20px;
-  width: 100%; 
+  width: 100%;
   font-family: 'montserrat';
   font-weight: 300;
 }
@@ -507,7 +507,7 @@ textarea:focus {
 
 
 /*************************
-  6. Basic margin padding  
+  6. Basic margin padding
 *************************/
 .m-0 {
     margin: 0;
@@ -516,7 +516,7 @@ textarea:focus {
     padding: 0;
 }
 /*************************
-    6.1 Margin top 
+    6.1 Margin top
 *************************/
 .mt-0 { margin-top: 0 }
 .mt-10 { margin-top: 10px }
@@ -545,7 +545,7 @@ textarea:focus {
 .mt-190 { margin-top: 190px }
 .mt-200 { margin-top: 200px }
 /*************************
-    6.2 Margin right  
+    6.2 Margin right
 *************************/
 .mr-0 { margin-right: 0px }
 .mr-10 { margin-right: 10px }
@@ -565,7 +565,7 @@ textarea:focus {
 .mr-140 { margin-right: 140px }
 .mr-150 { margin-right: 150px }
 /*************************
-    6.3 Margin bottom 
+    6.3 Margin bottom
 *************************/
 .mb-0 { margin-bottom: 0 }
 .mb-5 { margin-bottom: 5px }
@@ -596,7 +596,7 @@ textarea:focus {
 .mb-190 { margin-bottom: 190px }
 .mb-200 { margin-bottom: 200px }
 /*************************
-    6.4 Margin left 
+    6.4 Margin left
 *************************/
 .ml-0 { margin-left: 0 }
 .ml-10 { margin-left: 10px }
@@ -644,7 +644,7 @@ textarea:focus {
 .pt-190 { padding-top: 190px }
 .pt-200 { padding-top: 200px }
 /*************************
-    6.6 Padding right 
+    6.6 Padding right
 *************************/
 .pr-0 { padding-right: 0 }
 .pr-10 { padding-right: 10px }
@@ -663,7 +663,7 @@ textarea:focus {
 .pr-130 { padding-right: 130px }
 .pr-140 { padding-right: 140px }
 /*************************
-    6.7 Padding bottom  
+    6.7 Padding bottom
 *************************/
 .pb-0 { padding-bottom: 0 }
 .pb-10 { padding-bottom: 10px }
@@ -692,7 +692,7 @@ textarea:focus {
 .pb-190 { padding-bottom: 190px }
 .pb-200 { padding-bottom: 200px }
 /*************************
-    6.8 Padding left 
+    6.8 Padding left
 *************************/
 .pl-0 { padding-left: 0 }
 .pl-10 { padding-left: 10px }
@@ -712,7 +712,7 @@ textarea:focus {
 .pl-140 { padding-left: 140px }
 .pl-150 { padding-left: 150px }
 /***************************
-    6.9 Page section padding   
+    6.9 Page section padding
 ****************************/
 .ptb-0 { padding: 0 }
 .ptb-10 { padding: 10px 0 }
@@ -739,7 +739,7 @@ textarea:focus {
 .ptb-190 { padding: 190px 0 }
 .ptb-200 { padding: 200px 0 }
 /***************************
-    6.10 Page section margin 
+    6.10 Page section margin
 ****************************/
 .mtb-0 { margin: 0 }
 .mtb-10 { margin: 10px 0 }
@@ -775,7 +775,7 @@ textarea:focus {
   padding-right: 7%;
 }
 /***************************
-  8. Scroll Up 
+  8. Scroll Up
 ****************************/
 #scrollUp {
   background: #919191 none repeat scroll 0 0;
@@ -859,7 +859,7 @@ textarea:focus {
   color: #ffffff;
 }
 /*************************************
-  11. Background variation set 
+  11. Background variation set
  **************************************/
 /*colored background*/
 .bg-gray{ background: #f5f5f5; }
@@ -875,10 +875,10 @@ textarea:focus {
   12. Opacity background
  **************************************/
  .bg-opacity-black-10, .bg-opacity-black-20, .bg-opacity-black-30, .bg-opacity-black-40, .bg-opacity-black-50, .bg-opacity-black-60, .bg-opacity-black-70, .bg-opacity-black-80, .bg-opacity-black-90, .bg-opacity-white-10, .bg-opacity-white-20, .bg-opacity-white-30,  .bg-opacity-white-40, .bg-opacity-white-50, .bg-opacity-white-60, .bg-opacity-white-70,  .bg-opacity-white-80, .bg-opacity-white-90{
-    z-index: 9; 
+    z-index: 9;
  }
  .bg-opacity-black-10:before, .bg-opacity-black-20:before, .bg-opacity-black-30:before, .bg-opacity-black-40:before, .bg-opacity-black-50:before, .bg-opacity-black-60:before, .bg-opacity-black-70:before, .bg-opacity-black-80:before, .bg-opacity-black-90:before, .bg-opacity-white-10:before, .bg-opacity-white-20:before, .bg-opacity-white-30:before, .bg-opacity-white-40:before, .bg-opacity-white-50:before, .bg-opacity-white-60:before, .bg-opacity-white-70:before, .bg-opacity-white-80:before, .bg-opacity-white-90:before{
-    content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: -1; 
+    content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: -1;
  }
 .bg-opacity-black-10:before {  background: rgba(0, 0, 0, 0.1);}
 .bg-opacity-black-20:before {  background: rgba(0, 0, 0, 0.2);}
@@ -903,43 +903,43 @@ textarea:focus {
 /*************************************
   13. image background
  **************************************/
-.bg-1 {background: url(images/bg/1.jpg);}
-.bg-2 { background: url(images/bg/2.jpg);}
-.bg-3 { background: url(images/bg/3.jpg);}
-.bg-4 { background: url(images/bg/4.jpg);}
-.bg-5 { background: url(images/bg/5.jpg);}
-.bg-6 { background: url(images/bg/6.jpg);}
-.bg-7 { background: url(images/bg/7.jpg);}
-.bg-8 { background: url(images/bg/8.jpg);}
-.bg-9 { background: url(images/bg/9.jpg);}
-.bg-10 { background: url(images/bg/10.jpg);}
+.bg-1 {background: url(/images/bg/1.jpg);}
+.bg-2 { background: url(/images/bg/2.jpg);}
+.bg-3 { background: url(/images/bg/3.jpg);}
+.bg-4 { background: url(/images/bg/4.jpg);}
+.bg-5 { background: url(/images/bg/5.jpg);}
+.bg-6 { background: url(/images/bg/6.jpg);}
+.bg-7 { background: url(/images/bg/7.jpg);}
+.bg-8 { background: url(/images/bg/8.jpg);}
+.bg-9 { background: url(/images/bg/9.jpg);}
+.bg-10 { background: url(/images/bg/10.jpg);}
 
-.bg-1 {background: url(../../images/bg/1.jpg);}
+.bg-1 {background: url(../..//images/bg/1.jpg);}
 .bg-2 {}
-.bg-3 { background: url(../../images/bg/3.jpg);}
-.bg-4 { background: url(../../images/bg/4.jpg);}
-.bg-5 { background: url(../../images/bg/5.jpg);}
-.bg-6 { background: url(../../images/bg/6.jpg);}
-.bg-7 { background: url(../../images/bg/7.jpg);}
-.bg-8 { background: url(../../images/bg/8.jpg);}
-.bg-9 { background: url(../../images/bg/9.jpg);}
-.bg-10 { background: url(../../images/bg/10.jpg);}
+.bg-3 { background: url(../..//images/bg/3.jpg);}
+.bg-4 { background: url(../..//images/bg/4.jpg);}
+.bg-5 { background: url(../..//images/bg/5.jpg);}
+.bg-6 { background: url(../..//images/bg/6.jpg);}
+.bg-7 { background: url(../..//images/bg/7.jpg);}
+.bg-8 { background: url(../..//images/bg/8.jpg);}
+.bg-9 { background: url(../..//images/bg/9.jpg);}
+.bg-10 { background: url(../..//images/bg/10.jpg);}
 
 .bg-1, .bg-2, .bg-3, .bg-4, .bg-5, .bg-6, .bg-7, .bg-8, .bg-9, .bg-10{
-  background-attachment: fixed; 
-  background-clip: initial; 
+  background-attachment: fixed;
+  background-clip: initial;
   background-color: rgba(0, 0, 0, 0);
-  background-origin: initial; background-position: center center; 
+  background-origin: initial; background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative; 
+  position: relative;
   z-index: 0;
 }
 /*pattern background*/
-.pattern-bg { 
- background:url(images/pattern/pattern-bg.png) repeat; 
- background-position: top right; 
- background-color: rgba(236, 239, 247, 1); 
+.pattern-bg {
+ background:url(images/pattern/pattern-bg.png) repeat;
+ background-position: top right;
+ background-color: rgba(236, 239, 247, 1);
 }
 /*************************************
   14. separator
@@ -1006,7 +1006,7 @@ textarea:focus {
   right: 0;
 }
 /*************************
-  15. Section title 1 
+  15. Section title 1
 ***********************/
 .section-title {}
 .section-title h1,
@@ -1023,7 +1023,7 @@ textarea:focus {
 }
 
 /*************************
-  16. section title 2 
+  16. section title 2
 *************************/
 .section-title-2 {
   margin: auto;

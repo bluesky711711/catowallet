@@ -73,6 +73,10 @@ class jsonRPCClient {
                                        'content' => $request
                                        ));
          $context = stream_context_create($opts);
+         if ( !curl_init($this->uri) ) {
+           return null;
+           throw new Exception('File not found.');
+         }
          if($fp = fopen($this->uri, 'r', false, $context)) {
             $response = '';
             while($row=fgets($fp)) {
@@ -80,10 +84,9 @@ class jsonRPCClient {
             }
             $this->debug && $this->debug .= '**** Server response ****'."\n".$response."\n".'**** End of server response *****'."\n\n";
             $response = json_decode($response, true);
-
          } else {
-           throw new Exception('Unable to connect to'. $this->uri);
            return null;
+           throw new Exception('Unable to connect to'. $this->uri);
          }
 
          /*
