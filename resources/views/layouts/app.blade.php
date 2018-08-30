@@ -30,7 +30,7 @@
 
 
     <!-- Modernizr JS -->
-    <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- <script src="/js/vendor/modernizr-2.8.3.min.js"></script> -->
 
     <!-- Placed js at the end of the document so the pages load faster -->
 

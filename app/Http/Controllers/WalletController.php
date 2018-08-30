@@ -37,10 +37,11 @@ class WalletController extends Controller
        $addresses_data = [];
        $masternode_data = [];
        $walletinfo = null;
+       $client = null;
        foreach ($wallets as $wallet) {
          //$wallet = Wallet::where('id', $user->wallet_id)->first();
          $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$wallet->rpcpassword.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
-
+         if ($client == null) continue;
          $walletinfo = $client->getwalletinfo();
          if ($walletinfo == null) continue;
          $wallet_balance = $wallet_balance + $walletinfo['balance'];
@@ -76,7 +77,7 @@ class WalletController extends Controller
            array_push($masternode_data, $masternodeconf);
          }
        }
-
+       if ($client == null) $walletinfo = null;
 
                 return view('wallet', [
                  'page' => 'wallet',
