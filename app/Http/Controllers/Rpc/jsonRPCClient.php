@@ -73,10 +73,10 @@ class jsonRPCClient {
                                        'content' => $request
                                        ));
          $context = stream_context_create($opts);
-         if ( !curl_init($this->uri) ) {
-           return null;
-           throw new Exception('File not found.');
-         }
+         // if ( !curl_init($this->uri) ) {
+         //   return null;
+         //   throw new Exception('File not found.');
+         // }
          if($fp = fopen($this->uri, 'r', false, $context)) {
             $response = '';
             while($row=fgets($fp)) {

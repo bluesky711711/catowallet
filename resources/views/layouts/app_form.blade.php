@@ -118,7 +118,7 @@
                         <h2>Login</h2>
                         <br>
                         <p>
-                            Get access to your wallet balance, transactions and masternodes (if applicable)
+                            Get access to your wallet balance, transactions and masternodes <br/>(if applicable)
                         </p>
                         <img src="images/login-left.png" class="img-responsive">
                     </div>
@@ -136,6 +136,11 @@
                                             {{csrf_field()}}
                                             <div class="login-account p-30 box-shadow">
                                                 <p>If you have an account with us, Please log in.</p>
+                                                @if ($message = Session::get('error'))
+                                                  <div style="color:#cf0000;background-color:#f8f8f8;padding:10px 30px 10px 30px;border-bottom: 1px solid #eee">
+                                                      <span style="font-weight:bold;">{{ $message }}</span>
+                                                  </div>
+                                                @endif
                                                 <input type="email" name="email" placeholder="Email Address">
                                                 @if ($errors->has('email'))
                                                     <span class="mdl-textfield__error">{{ $errors->first('email') }}</span>
@@ -144,7 +149,7 @@
                                                 @if ($errors->has('password'))
                                                     <span class="mdl-textfield__error">{{ $errors->first('password') }}</span>
                                                 @endif
-                                                <p><small><a href="#">Forgot our password?</a></small></p>
+                                                <p><small><a href="{{ url('/password/reset') }}">Forgot our password?</a></small></p>
                                                 <button class="submit-btn-1" type="submit">login</button>
                                             </div>
                                         </form>
