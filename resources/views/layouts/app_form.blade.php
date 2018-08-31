@@ -115,12 +115,15 @@
                 <div class="row">
                     <div class="col-sm-4 hidden-xs login-left">
                         <br>
-                        <h2>Login</h2>
-                        <br>
-                        <p>
-                            Access your wallet balance(s), transactions and masternodes (if applicable).
+                        <h2>Login/Signup</h2>
+                        <br></br>
+                        <p align=left>
+                            To acces your wallet balance(s), transactions and masternode status you must</br>
+			    1. Signup (we will get notified)</br> 
+			    2. Download and install the 'Google Authenticator' for Apple or Android</br>
+			    3. We will contact you to verify your identity (if we already host your wallet)</br>
+			    4. We will then link your CatoCoin wallet to you account here</br>
                         </p>
-                        <img src="images/login-left.png" class="img-responsive">
                     </div>
                     <div class="col-sm-8 col-xs-12">
                         <i class="fas fa-times cancel-btn"></i>

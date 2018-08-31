@@ -93,7 +93,7 @@
                                 <nav id="primary-menu">
                                     <ul class="main-menu text-center">
                                         <li><a href="/">Home</a></li>
-                                        <li><a href="/fund">Fund Your Account</a></li>
+                                        <li><a href="/fund">About the Portal</a></li>
                                         <li><a href="/wallet">Wallet Balance</a></li>
                                         <li><a target="_blank" href="https://catocoin.net">Explore CatoCoin</a></li>
                                         <li><a href="/news">CatoCoin News</a></li>
@@ -208,7 +208,7 @@
                             <nav id="dropdown">
                                 <ul>
                                     <li><a href="/">Home</a></li>
-                                    <li><a href="/fund-your-account">Fund Your Account</a></li>
+                                    <li><a href="/fund ">About the Portal</a></li>
                                     <li><a href="/wallet">Wallet Balance</a></li>
                                     <li><a href="/download">Explore CatoCoin</a></li>
                                     <!--<li><a href="contact.html">Contact</a></li>-->
@@ -224,13 +224,30 @@
         @yield('content')
         <!-- Start footer area -->
         <footer id="footer" class="footer-area bg-2 bg-opacity-black-90">
-            <div class="footer-top pt-110 pb-80">
+            <div class="footer-top pt-30 pb-80">
                 <div class="container">
                     <div class="row">
                         <!-- footer-address -->
                         <div class="col-lg-6 col-md-3 col-sm-6 col-xs-12">
                             <div class="footer-widget">
-                                <h6 class="footer-titel">We're everywhere</h6>
+
+                             <h6 class="footer-titel">Portal Uasge</h6>
+                                <ul class="footer-address">
+                                    <li>
+                                        <div class="address-info">
+                               <span>To acces your wallet balance(s), transactions and masternode status you must</br>
+			    1. <a href='http://207.148.65.130/login'><u>Signup here</u></a> to create a 'Portal' account (we'll get notified)</br> 
+			    2. Download and install the 'Google Authenticator' for Apple or Android</br>
+			    3. We will contact you to verify your identity (if we already host your wallet)</br>
+			    4. We will link your CatoCoin wallet to your portal account</br>
+			    5. If you do not have a CatoCoin wallet <a href="/fund"><u>click here</u></a></br></br></span>
+                                        </div>
+                                    </li>
+                                </ul>
+
+
+
+                                <h6 class="footer-titel">About Us</h6>
                                 <ul class="footer-address">
                                     <li>
                                         <div class="address-icon">

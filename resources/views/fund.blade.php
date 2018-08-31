@@ -1,19 +1,27 @@
 @extends('layouts.app')
 @section('content')
-<section id="page-content" class="page-wrapper" style="padding:50px 0px">
-            <div class="about-sheltek-area ptb-115" style="padding-bottom: 0px !important;">
+<section id="page-content" class="page-wrapper" style="padding:10px 0px">
+            <div class="about-sheltek-area ptb-55" style="padding-bottom: 0px !important;">
                 <div class="container">
                     <div class="row">
                         <div class="section-title mb-30">
-                            <h3>SOME WORD </h3>
-                            <h2>ABOUT CRYPTO CURRENCY</h2>
+                            <h3>About the CatoCoin Portal</h3>
                         </div>
                         <div class="about-sheltek-info">
-                            <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Crypto Currency</span> is the best theme for  elit, sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliquatd minim veniam, quis nostrud exercitation oris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolo.</p>
-                            <p>Lorem is a dummy text do eiusmod tempor dolor sit amet, onsectetur adip iscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliqua Ut enim onsectetur. Lorem is a dummy text do eiusmod tempor dolor sit amet, onsectetur adip iscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliqua Ut enim onsectetur </p>
-                            <p>Lorem is a dummy text do eiusmod tempor dolor sit amet, onsectetur adip iscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliqua Ut enim onsectetur. Lorem is a dummy text do eiusmod tempor dolor sit amet, onsectetur adip iscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliqua Ut enim onsectetur </p>
-                            <p>Lorem is a dummy text do eiusmod tempor dolor sit amet, onsectetur adip iscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliqua Ut enim onsectetur. Lorem is a dummy text do eiusmod tempor dolor sit amet, onsectetur adip iscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliqua Ut enim onsectetur </p>
-                        </div>
+                            <p>
+<b>The purpose of this portal</b> is to give CatoCoin wallet holders mobile access to their balances without the need for a 'special app', which require constant updates as enhancements are made. Through the use of this 'responsive portal' (designed for mobile devices)
+ selected CatoCoin holders can view their wallet balances, transactions and masternodes status. </p> 
+
+<b>How to use the portal</b> is to give CatoCoin wallet holders mobile access to their balances without the need for a 'special app', which require constant updates as enhancements are made. Through the use of this 'responsive portal' (designed for mobile devices)
+ selected CatoCoin holders can view their wallet balances, transactions and masternodes status. </p> 
+
+<b>Getting Start & purchasing CatoCoins</b> is to give CatoCoin wallet holders mobile access to their balances without the need for a 'special app', which require constant updates as enhancements are made. Through the use of this 'responsive portal' (designed for mobile devices)
+ selected CatoCoin holders can view their wallet balances, transactions and masternodes status. </p>
+
+<b>Logging in to view your CatoCoin balances</b> is to give CatoCoin wallet holders mobile access to their balances without the need for a 'special app', which require constant updates as enhancements are made. Through the use of this 'responsive portal' (designed for mobile devices)
+ selected CatoCoin holders can view their wallet balances, transactions and masternodes status. </p>
+
+                      </div>
                     </div>
                 </div>
             </div>
