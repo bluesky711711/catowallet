@@ -46,6 +46,7 @@
 
         <!-- HEADER AREA START -->
         <header class="header-area header-wrapper">
+          @if (isset($page) && $page == "wallet")
             <div class="header-middle-area  transparent-header mi-header-area">
                 <div class="container">
                     <div class="full-width-mega-drop-menu">
@@ -57,29 +58,28 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="header-top-bar bg-white">
+            <div class="header-middle-area  transparent-header mi-header-area">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-8 col-sm-8 col-xs-12">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img src="images/logo/logo.png" alt="">
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <div class="logo" style="text-align:right">
+                                <a target="_blank" href="https://www.coinexchange.io/market/CATO/BTC">
+                                    <img src="/images/coinexchange_logo.png" alt="">
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="header-search clearfix">
-                                <form action="#">
-                                    <button class="search-icon" type="submit">
-                                        <img src="images/icons/search.png" alt="">
-                                    </button>
-                                    <input type="text" placeholder="Search...">
-                                </form>
-                            </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12"></div>
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                          <div class="logo" style="text-align:left">
+                              <a target="_blank" href="https://wallet.crypto-bridge.org/market/BRIDGE.CATO_BRIDGE.BTC">
+                                  <img src="/images/cryptobridge_logo.png" alt="">
+                              </a>
+                          </div>
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
+            @endif
             <div id="sticky-header" class="header-middle-area  transparent-header hidden-xs">
                 <div class="container">
                     <div class="full-width-mega-drop-menu">

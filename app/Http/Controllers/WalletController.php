@@ -24,13 +24,139 @@ class WalletController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function getwalletinfo() {
+      $user = Auth::user();
+
+      $wallets = Wallet::where('user_id', $user->id)->get();
+      $wallet_balance = 0;
+      $transactions = [];
+      $addresses_data = [];
+      $masternode_data = [];
+      $walletinfo = null;
+      $client = null;
+      foreach ($wallets as $wallet) {
+        //$wallet = Wallet::where('id', $user->wallet_id)->first();
+        $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$wallet->rpcpassword.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
+        if ($client == null) continue;
+        $walletinfo = $client->getwalletinfo();
+        if ($walletinfo == null) continue;
+        $wallet_balance = $wallet_balance + $walletinfo['balance'];
+      }
+
+      return array('wallet_balance' => $wallet_balance, 'connection' => $walletinfo);
+    }
+
+
+    public function gettransactions(){
+      $user = Auth::user();
+
+      $wallets = Wallet::where('user_id', $user->id)->get();
+      $wallet_balance = 0;
+      $transactions = [];
+      $walletinfo = null;
+      $client = null;
+      foreach ($wallets as $wallet) {
+        $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$wallet->rpcpassword.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
+        if ($client == null) continue;
+        $walletinfo = $client->getwalletinfo();
+        if ($walletinfo == null) continue;
+
+        $transactions_item = $client->listtransactions("*", 50);
+        foreach ($transactions_item as $tran){
+          $tran['type'] = $tran['category'];
+          Log::info($tran);
+          if ((isset($tran["generated"]) && $tran["generated"] == true) && $tran['vout'] == 2 && $tran['category']=="receive"){
+            $tran['type'] = "Masternode Reward";
+          }
+
+          array_push($transactions, $tran);
+        }
+      }
+      return array('transactions' => $transactions, 'connection' => $walletinfo);
+    }
+
+    public function getaddresses() {
+      $user = Auth::user();
+      $wallets = Wallet::where('user_id', $user->id)->get();
+      $wallet_balance = 0;
+      $transactions = [];
+      $addresses_data = [];
+      $masternode_data = [];
+      $walletinfo = null;
+      $client = null;
+      foreach ($wallets as $wallet) {
+        $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$wallet->rpcpassword.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
+        if ($client == null) continue;
+        $walletinfo = $client->getwalletinfo();
+        if ($walletinfo == null) continue;
+        $addresses = $client->listaddressgroupings();
+
+        foreach ($addresses[0] as $address){
+            array_push($addresses_data, array("item_addr" => $address[0], "balance" => $address[1]));
+        }
+      }
+
+      return array('addresses_data' => $addresses_data , 'connection' => $walletinfo);
+    }
+
+    public function getmasternodestatus() {
+      $user = Auth::user();
+
+      $wallets = Wallet::where('user_id', $user->id)->get();
+      $wallet_balance = 0;
+      $masternode_data = [];
+      $walletinfo = null;
+      $client = null;
+      foreach ($wallets as $wallet) {
+        //$wallet = Wallet::where('id', $user->wallet_id)->first();
+        $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$wallet->rpcpassword.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
+        if ($client == null) continue;
+        $walletinfo = $client->getwalletinfo();
+        if ($walletinfo == null) continue;
+        $wallet_balance = $wallet_balance + $walletinfo['balance'];
+
+        $masternodeconfs = $client->listmasternodeconf();
+        foreach ($masternodeconfs as $masternodeconf){
+          $masternodes = $client->listmasternodes($masternodeconf['txHash']);
+          if (count($masternodes) > 0){
+            $masternode = $masternodes[0];
+            $masternodeconf['public_key'] = $masternode['addr'];
+            $masternodeconf['lastseen'] = $masternode["lastseen"];
+            $masternodeconf["activetime"] = $masternode["activetime"];
+            $masternodeconf["version"] = $masternode["version"];
+          }
+          array_push($masternode_data, $masternodeconf);
+        }
+      }
+
+      return array('masternode_data' => $masternode_data, 'connection' => $walletinfo);
+    }
+
     public function wallet()
     {
+      $user = Auth::user();
+      $wallets = Wallet::where('user_id', $user->id)->get();
+      $wallet_balance = 0;
+      $walletinfo = null;
+      foreach ($wallets as $wallet) {
+        $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$wallet->rpcpassword.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
+        if ($client == null) continue;
+        $walletinfo = $client->getwalletinfo();
+        if ($walletinfo == null) continue;
+        $wallet_balance = $wallet_balance + $walletinfo['balance'];
+      }
+      
+        return view('wallet', [
+         'page' => 'wallet',
+         'connection' => $walletinfo,
+         'balance' => $wallet_balance
+        ]);
+    }
+
+    public function walletorg()
+    {
        $user = Auth::user();
-       // $mfa = PasswordSecurity::where('user_id', $user->id)->first();
-       // if (!isset($mfa) || !$mfa->google2fa_enable) {
-       //   return redirect('/2fa');
-       // }
+
        $wallets = Wallet::where('user_id', $user->id)->get();
        $wallet_balance = 0;
        $transactions = [];
@@ -39,7 +165,7 @@ class WalletController extends Controller
        $walletinfo = null;
        $client = null;
        foreach ($wallets as $wallet) {
-         //$wallet = Wallet::where('id', $user->wallet_id)->first();
+
          $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$wallet->rpcpassword.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
          if ($client == null) continue;
          $walletinfo = $client->getwalletinfo();
@@ -55,10 +181,7 @@ class WalletController extends Controller
            if ((isset($tran["generated"]) && $tran["generated"] == true) && $tran['vout'] == 2 && $tran['category']=="receive"){
              $tran['type'] = "Masternode Reward";
            }
-           // if ($tran['account'] == "") {
-           //   $account = $client->getaccount($tran['address']);
-           //   $tran['account'] = $account;
-           // }
+
            array_push($transactions, $tran);
          }
          foreach ($addresses[0] as $address){

@@ -124,7 +124,7 @@
 .drop-menu > li:hover > a,
 .single-mega-item > li:hover > a {
 	color: #95c41f;
-} 
+}
 /*drop-menu Style*/
 .drop-menu {
   background: #ffffff none repeat scroll 0 0;
@@ -193,7 +193,7 @@
 }
 .single-mega-item li:last-child{
 	border-bottom: 0px solid #000;
-} 
+}
 .single-mega-item li a{
   padding: 13px 0px;
 	display: block;
@@ -267,8 +267,5 @@
 }
 
 .logo a img{
-  width: 80px;
+  width: 200px;
 }
-
-
-
