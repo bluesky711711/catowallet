@@ -119,7 +119,7 @@
                         <br></br>
                         <p align=left>
                             To acces your wallet balance(s), transactions and masternode status you must</br>
-			    1. Signup (we will get notified)</br> 
+			    1. Signup (we will get notified)</br>
 			    2. Download and install the 'Google Authenticator' for Apple or Android</br>
 			    3. We will contact you to verify your identity (if we already host your wallet)</br>
 			    4. We will then link your CatoCoin wallet to you account here</br>
@@ -162,6 +162,7 @@
                                     <div class="new-customers mb-50">
                                         <form action="{{ url('/register') }}" method="POST">
                                             {{ csrf_field() }}
+
                                             <div class="login-account p-30 box-shadow">
                                                 <div class="row" style="background: none;">
                                                     <div class="col-sm-6">

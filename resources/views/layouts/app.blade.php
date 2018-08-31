@@ -236,7 +236,7 @@
                                     <li>
                                         <div class="address-info">
                                <span>To acces your wallet balance(s), transactions and masternode status you must</br>
-			    1. <a href='http://207.148.65.130/login'><u>Signup here</u></a> to create a 'Portal' account (we'll get notified)</br> 
+			    1. <a href='http://207.148.65.130/login'><u>Signup here</u></a> to create a 'Portal' account (we'll get notified)</br>
 			    2. Download and install the 'Google Authenticator' for Apple or Android</br>
 			    3. We will contact you to verify your identity (if we already host your wallet)</br>
 			    4. We will link your CatoCoin wallet to your portal account</br>
@@ -262,7 +262,7 @@
 					    <span>Discord :<a href="https://discord.gg/kNxfaZq" target="_blank"> https://discord.gg/kNxfaZq</a></span>
 					    <span>BitCoinTalk :<a href="https://bitcointalk.org/index.php?topic=4532077.0" target="_blank"> https://bitcointalk.org/index.php?topic=4532077.0</a></span>
 					    <span>Telegram :<a href="https://t.me/catocoin" target="_blank"> https://t.me/catocoin</a></span>
-					    <span>Portal (here) :<a href="https://portal.catocoin.info" target="_blank"> https://portal/catocoin.info</a></span>	
+					    <span>Portal (here) :<a href="https://portal.catocoin.info" target="_blank"> https://portal/catocoin.info</a></span>
                                         </div>
                                     </li>
                                 </ul>
@@ -366,13 +366,14 @@
     $("#login-upMn").click(function () {
         $(".login-left").height(435);
     })
-
+    @if (Auth::guest())
     var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
     console.log('chrome', isChrome);
 
     if (!isChrome){
       alert('We require to run on chrome browser!');
     }
+    @endif
 </script>
 
 </body>

@@ -57,7 +57,7 @@
 								<div class="elements-tab-1">
 										<!-- <h5 class="mb-50">Accounts</h5> -->
 										<!-- Nav tabs -->
-										<ul class="nav nav-tabs">
+										<ul class="nav nav-tabs" style="min-width:450px">
 												<li class="active"><a href="#transections" data-tab="transactions" data-toggle="tab">Transactions</a></li>
 												<li><a href="#aBalance_1"  data-tab="addresses" data-toggle="tab">Address Balances</a></li>
 												<li><a href="#MNStatus_1"  data-tab="masternodes" data-toggle="tab">Master Node Status</a></li>
