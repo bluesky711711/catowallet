@@ -51,13 +51,14 @@ class WalletController extends Controller
 
          foreach ($transactions_item as $tran){
            $tran['type'] = $tran['category'];
+           Log::info($tran);
            if ((isset($tran["generated"]) && $tran["generated"] == true) && $tran['vout'] == 2 && $tran['category']=="receive"){
              $tran['type'] = "Masternode Reward";
            }
-           if ($tran['account'] == "") {
-             $account = $client->getaccount($tran['address']);
-             $tran['account'] = $account;
-           }
+           // if ($tran['account'] == "") {
+           //   $account = $client->getaccount($tran['address']);
+           //   $tran['account'] = $account;
+           // }
            array_push($transactions, $tran);
          }
          foreach ($addresses[0] as $address){
