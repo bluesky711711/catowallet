@@ -30,6 +30,11 @@ Route::post('/generate2faSecret','PasswordSecurityController@generate2faSecret')
 Route::post('/2fa','PasswordSecurityController@enable2fa')->name('enable2fa');
 Route::post('/disable2fa','PasswordSecurityController@disable2fa')->name('disable2fa');
 
+Route::post('/getwalletinfo', 'WalletController@getwalletinfo')->name('getwalletinfo');
+Route::post('/getmasternodestatus', 'WalletController@getmasternodestatus')->name('getmasternodestatus');
+Route::post('/getaddresses', 'WalletController@getaddresses')->name('getaddresses');
+Route::post('/gettransactions', 'WalletController@gettransactions')->name('gettransactions');
+
 Route::post('/2faVerify', function () {
     return redirect(URL()->previous());
 })->name('2faVerify')->middleware('2fa');
