@@ -230,33 +230,22 @@
                         <!-- footer-address -->
                         <div class="col-lg-6 col-md-3 col-sm-6 col-xs-12">
                             <div class="footer-widget">
-                                <h6 class="footer-titel">GET IN TOUCH</h6>
+                                <h6 class="footer-titel">We're everywhere</h6>
                                 <ul class="footer-address">
-                                    <li>
-                                        <div class="address-icon">
-                                            <img src="images/icons/location-2.png" alt="">
-                                        </div>
-                                        <div class="address-info">
-                                            <span>8901 Marmora Raod,</span>
-                                            <span>Glasgow, D04  89GR</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="address-icon">
-                                            <img src="images/icons/phone-3.png" alt="">
-                                        </div>
-                                        <div class="address-info">
-                                            <span>Telephone : (801) 4256  9856</span>
-                                            <span>Telephone : (801) 4256  9658</span>
-                                        </div>
-                                    </li>
                                     <li>
                                         <div class="address-icon">
                                             <img src="images/icons/world.png" alt="">
                                         </div>
                                         <div class="address-info">
-                                            <span>Email : contact@misujon.com</span>
-                                            <span>Web :<a href="#" target="_blank"> www.misujon.com</a></span>
+                                            <span>Email : iamcatocoin@gmail.com</span>
+                                            <span>Web :<a href="https://catocoin.net" target="_blank"> https://catocoin.net</a></span>
+					    <span>Block Explorer: <a href="http://explorer.catocoin.info/" target="_blank"> http://explorer.catocoin.info/</a></span>
+					    <span>Wallets :<a href="https://github.com/CatoCoin/releases" target="_blank"> https://github.com/CatoCoin/releases</a></span>
+					    <span>Twitter :<a href="https://twitter.com/catocoin" target="_blank"> https://twitter.com/catocoin</a></span>
+					    <span>Discord :<a href="https://discord.gg/kNxfaZq" target="_blank"> https://discord.gg/kNxfaZq</a></span>
+					    <span>BitCoinTalk :<a href="https://bitcointalk.org/index.php?topic=4532077.0" target="_blank"> https://bitcointalk.org/index.php?topic=4532077.0</a></span>
+					    <span>Telegram :<a href="https://t.me/catocoin" target="_blank"> https://t.me/catocoin</a></span>
+					    <span>Portal (here) :<a href="https://portal.catocoin.info" target="_blank"> https://portal/catocoin.info</a></span>	
                                         </div>
                                     </li>
                                 </ul>
@@ -281,7 +270,7 @@
                             <div class="footer-widget">
                                 <h6 class="footer-titel">QUICK CONTACT</h6>
                                 <div class="footer-contact">
-                                    <p>Lorem ipsum dolor sit amet, consectetur acinglit sed do eiusmod tempor</p>
+                                    <p>Send us an email</p>
                                     <form  id="contact-form-2" action="mail_footer.php" method="post">
                                         <input type="email" name="email2" placeholder="Type your E-mail address...">
                                         <textarea name="message2" placeholder="Write here..."></textarea>
@@ -299,7 +288,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="copyright text-center">
-                                <p>Copyright &copy; 2018 <a href="https://www.misujon.com/"><b>Misujon</b></a>. All rights reserved.</p>
+                                <p>Copyright &copy; 2018 Cato Coins LLC. All rights reserved.</p>
                             </div>
                         </div>
                     </div>

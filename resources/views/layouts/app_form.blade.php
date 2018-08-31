@@ -118,7 +118,7 @@
                         <h2>Login</h2>
                         <br>
                         <p>
-                            Get access to your wallet balance, transactions and masternodes <br/>(if applicable)
+                            Access your wallet balance(s), transactions and masternodes (if applicable).
                         </p>
                         <img src="images/login-left.png" class="img-responsive">
                     </div>
