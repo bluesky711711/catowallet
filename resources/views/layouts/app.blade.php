@@ -64,7 +64,7 @@
                         <div class="col-md-5 col-sm-5 col-xs-12">
                             <div class="logo" style="text-align:right">
                                 <a target="_blank" href="https://www.coinexchange.io/market/CATO/BTC">
-                                    <img src="/images/coinexchange_logo.png" alt="">
+                                    <img src="/images/coinexchange_logo.png" alt="" style="width:260px">
                                 </a>
                             </div>
                         </div>
