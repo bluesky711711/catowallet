@@ -14,7 +14,7 @@
                                  data-tweet-limit="3">
                                   Tweets by @TwitterDev
                               </a>
-                              <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                           </div>
                         </div>
                     </div>

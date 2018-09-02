@@ -26,7 +26,7 @@
     <link href="/css/color/color-core.css" data-style="styles" rel="stylesheet">
     <!-- User style -->
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="stylesheet" href="http://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
 
     <!-- Modernizr JS -->
@@ -62,19 +62,21 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-5 col-sm-5 col-xs-12">
-                            <div class="logo" style="text-align:right">
+                          <div class="logo" style="text-align:right">
+                            <a target="_blank" href="https://wallet.crypto-bridge.org/market/BRIDGE.CATO_BRIDGE.BTC">
+                                <img src="/images/cryptobridge_logo.png" alt="">
+                            </a>
+                          </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-12"></div>
+
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <div class="logo" style="text-align:left">
                                 <a target="_blank" href="https://www.coinexchange.io/market/CATO/BTC">
                                     <img src="/images/coinexchange_logo.png" alt="" style="width:260px">
                                 </a>
                             </div>
-                        </div>
-                        <div class="col-md-2 col-sm-2 col-xs-12"></div>
-                        <div class="col-md-5 col-sm-5 col-xs-12">
-                          <div class="logo" style="text-align:left">
-                              <a target="_blank" href="https://wallet.crypto-bridge.org/market/BRIDGE.CATO_BRIDGE.BTC">
-                                  <img src="/images/cryptobridge_logo.png" alt="">
-                              </a>
-                          </div>
                         </div>
                     </div>
                 </div>

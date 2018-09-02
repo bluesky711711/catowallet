@@ -299,7 +299,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="copyright text-center">
-                                <p>Copyright &copy; 2018 <a href="https://www.misujon.com/"><b>Misujon</b></a>. All rights reserved.</p>
+                                <p>Copyright &copy; 2018 Cato Coins LLC. All rights reserved.</p>
                             </div>
                         </div>
                     </div>

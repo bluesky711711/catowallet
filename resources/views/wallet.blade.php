@@ -73,6 +73,7 @@
 																		<th class="text-center">Type</th>
 																		<th class="text-center">Account</th>
 																		<th class="text-center">Amount</th>
+                                    <th class="text-center">Confirmed</th>
 																</tr>
 																</thead>
 																<tbody id="tbody_transactions">
@@ -198,13 +199,26 @@ $('.nav-tabs li a').click(function(){
 			for (i in res.transactions){
 				console.log(res.transactions[i]);
 				transaction = res.transactions[i];
-				html = html + '<tr>\
-						<td scope="row">'+ transaction['txid'] +'</td>' +
-						'<td>'+ transaction['time'] +'</td>' +
-						'<td>'+ transaction['type'] +'</td>' +
-						'<td>'+ transaction['account'] +'</td>' +
-						'<td>'+ transaction['amount'] +'</td>\
-				</tr>';
+        console.log('transaction', transaction);
+        if (transaction.confirmations >= 15){
+          html = html + '<tr>\
+              <td scope="row">'+ transaction['txid'] +'</td>' +
+              '<td>'+ transaction['datetime'] +'</td>' +
+              '<td>'+ transaction['type'] +'</td>' +
+              '<td>'+ transaction['account'] +'</td>' +
+              '<td>'+ transaction['amount'] +'</td>' +
+              '<td style="color:green">&#10004;</td>\
+          </tr>';
+        } else {
+          html = html + '<tr>\
+              <td scope="row">'+ transaction['txid'] +'</td>' +
+              '<td>'+ transaction['datetime'] +'</td>' +
+              '<td>'+ transaction['type'] +'</td>' +
+              '<td>'+ transaction['account'] +'</td>' +
+              '<td>'+ transaction['amount'] +'</td>' +
+              '<td>'+ transaction['confirmations'] +'</td>\
+          </tr>';
+        }
 			}
 			$('#tbody_transactions').html(html);
 			$('.loader').hide();

@@ -68,7 +68,7 @@ class WalletController extends Controller
           if ((isset($tran["generated"]) && $tran["generated"] == true) && $tran['vout'] == 2 && $tran['category']=="receive"){
             $tran['type'] = "Masternode Reward";
           }
-
+          $tran['datetime'] = date('Y-m-d h:m:s', $tran['time']);
           array_push($transactions, $tran);
         }
       }
@@ -92,7 +92,9 @@ class WalletController extends Controller
         $addresses = $client->listaddressgroupings();
 
         foreach ($addresses[0] as $address){
+          if ($address[1] > 0){
             array_push($addresses_data, array("item_addr" => $address[0], "balance" => $address[1]));
+          }
         }
       }
 
@@ -145,7 +147,7 @@ class WalletController extends Controller
         if ($walletinfo == null) continue;
         $wallet_balance = $wallet_balance + $walletinfo['balance'];
       }
-      
+
         return view('wallet', [
          'page' => 'wallet',
          'connection' => $walletinfo,
