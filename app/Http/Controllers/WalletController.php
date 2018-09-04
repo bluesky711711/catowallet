@@ -132,7 +132,7 @@ class WalletController extends Controller
         Log::info($addresses);
         foreach ($addresses as $item) {
         foreach ($item as $address){
-          if ($address[1] > 0){
+          if ($address[1] >= 1){
             array_push($addresses_data, array("item_addr" => $address[0], "balance" => $address[1]));
           }
         }
