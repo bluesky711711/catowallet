@@ -98,7 +98,7 @@
                                         <li><a target="_blank" href="https://catocoin.net">Explore CatoCoin</a></li>
                                         <li><a href="/news">CatoCoin News</a></li>
                                         <!--<li><a href="contact.html">Contact</a></li>-->
-                                        <li id="log1"><a href="#">Login/Signup</a></li>
+                                        <li id="log1"><a href="/login">Login/Signup</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -209,7 +209,7 @@
                                     <li><a href="/download">Explore CatoCoin</a></li>
                                     <li><a href="/news">CatoCoin News</a></li>
                                     <!--<li><a href="contact.html">Contact</a></li>-->
-                                    <li id="log2"><a href="#">Login/Signup</a></li>
+                                    <li id="log2"><a href="/login">Login/Signup</a></li>
                                 </ul>
                             </nav>
                         </div>
