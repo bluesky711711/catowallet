@@ -24,6 +24,26 @@ class WalletController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function my_simple_crypt( $string, $action = 'e' ) {
+      // you may change these values to your own
+      $secret_key = 'my_simple_secret_key';
+      $secret_iv = 'my_simple_secret_iv';
+
+      $output = false;
+      $encrypt_method = "AES-256-CBC";
+      $key = hash( 'sha256', $secret_key );
+      $iv = substr( hash( 'sha256', $secret_iv ), 0, 16 );
+
+      if( $action == 'e' ) {
+          $output = base64_encode( openssl_encrypt( $string, $encrypt_method, $key, 0, $iv ) );
+      }
+      else if( $action == 'd' ){
+          $output = openssl_decrypt( base64_decode( $string ), $encrypt_method, $key, 0, $iv );
+      }
+
+      return $output;
+     }
+
     public function getwalletinfo() {
       $user = Auth::user();
 
@@ -36,7 +56,10 @@ class WalletController extends Controller
       $client = null;
       foreach ($wallets as $wallet) {
         //$wallet = Wallet::where('id', $user->wallet_id)->first();
-        $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$wallet->rpcpassword.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
+        Log::info($wallet->rpcpassword);
+        $rpc_password = $this->my_simple_crypt($wallet->rpcpassword, 'd');
+        Log::info($rpc_password);
+        $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$rpc_password.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
         if ($client == null) continue;
         $walletinfo = $client->getwalletinfo();
         if ($walletinfo == null) continue;
@@ -56,7 +79,8 @@ class WalletController extends Controller
       $walletinfo = null;
       $client = null;
       foreach ($wallets as $wallet) {
-        $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$wallet->rpcpassword.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
+        $rpc_password = $this->my_simple_crypt($wallet->rpcpassword, 'd');
+        $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$rpc_password.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
         if ($client == null) continue;
         $walletinfo = $client->getwalletinfo();
         if ($walletinfo == null) continue;
@@ -99,7 +123,8 @@ class WalletController extends Controller
       $walletinfo = null;
       $client = null;
       foreach ($wallets as $wallet) {
-        $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$wallet->rpcpassword.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
+        $rpc_password = $this->my_simple_crypt($wallet->rpcpassword, 'd');
+        $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$rpc_password.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
         if ($client == null) continue;
         $walletinfo = $client->getwalletinfo();
         if ($walletinfo == null) continue;
@@ -115,6 +140,8 @@ class WalletController extends Controller
       return array('addresses_data' => $addresses_data , 'connection' => $walletinfo);
     }
 
+
+
     public function getmasternodestatus() {
       $user = Auth::user();
 
@@ -124,8 +151,8 @@ class WalletController extends Controller
       $walletinfo = null;
       $client = null;
       foreach ($wallets as $wallet) {
-        //$wallet = Wallet::where('id', $user->wallet_id)->first();
-        $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$wallet->rpcpassword.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
+        $rpc_password = $this->my_simple_crypt($wallet->rpcpassword, 'd');
+        $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$rpc_password.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
         if ($client == null) continue;
         $walletinfo = $client->getwalletinfo();
         if ($walletinfo == null) continue;
@@ -155,7 +182,10 @@ class WalletController extends Controller
       $wallet_balance = 0;
       $walletinfo = null;
       foreach ($wallets as $wallet) {
-        $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$wallet->rpcpassword.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
+        $rpc_password = $this->my_simple_crypt($wallet->rpcpassword, 'd');
+        Log::info($wallet->rpcpassword);
+        Log::info($rpc_password);
+        $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$rpc_password.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
         if ($client == null) continue;
         $walletinfo = $client->getwalletinfo();
         if ($walletinfo == null) continue;
@@ -181,8 +211,8 @@ class WalletController extends Controller
        $walletinfo = null;
        $client = null;
        foreach ($wallets as $wallet) {
-
-         $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$wallet->rpcpassword.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
+         $rpc_password = $this->my_simple_crypt($wallet->rpcpassword, 'd');
+         $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$rpc_password.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
          if ($client == null) continue;
          $walletinfo = $client->getwalletinfo();
          if ($walletinfo == null) continue;
