@@ -327,7 +327,7 @@
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="/js/main.js"></script>
 
-    <script src='http://www.google.com/recaptcha/api.js'></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
 
 
