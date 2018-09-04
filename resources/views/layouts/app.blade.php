@@ -214,7 +214,7 @@
                                     <li><a href="/wallet">Wallet Balance</a></li>
                                     <li><a href="/download">Explore CatoCoin</a></li>
                                     <!--<li><a href="contact.html">Contact</a></li>-->
-                                    <li id="log2"><a href="#">Login/Signup</a></li>
+                                    <li id="log2"><a href="/login">Login/Signup</a></li>
                                 </ul>
                             </nav>
                         </div>
