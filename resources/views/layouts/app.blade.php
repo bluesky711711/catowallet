@@ -213,13 +213,8 @@
                                     <li><a href="/fund ">Getting Started/About</a></li>
                                     <li><a href="/wallet">Wallet Balance</a></li>
                                     <li><a href="/download">Explore CatoCoin</a></li>
-<<<<<<< HEAD
                                     <li><a href="/news">CatoCoin News</a></li>
-                                    <li id="log2"><a href="#">Login/Signup</a></li>
-=======
-                                    <!--<li><a href="contact.html">Contact</a></li>-->
                                     <li id="log2"><a href="/login">Login/Signup</a></li>
->>>>>>> 00edda1bd796c58d6a2914f1a11d0d1859fffb52
                                 </ul>
                             </nav>
                         </div>
@@ -242,7 +237,7 @@
                                 <ul class="footer-address">
                                     <li>
                                         <div class="address-info">
-                            <span>   
+                            <span>
 			    <a href="/fund">Click here to get started</a><br>
 			    <a href="/login">Click here to login/Signup</a>
 				</br></br></span>
