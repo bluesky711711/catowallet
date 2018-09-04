@@ -84,7 +84,7 @@ class WalletController extends Controller
         if ($client == null) continue;
         $walletinfo = $client->getwalletinfo();
         if ($walletinfo == null) continue;
-        $transactions_item = $client->listtransactions("*", 50);
+        $transactions_item = $client->listtransactions("*", 750);
         foreach ($transactions_item as $tran){
           $tran['type'] = $tran['category'];
           if ((isset($tran["generated"]) && $tran["generated"] == true) && $tran['vout'] == 2 && $tran['category']=="receive"){
