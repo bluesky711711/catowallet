@@ -93,7 +93,7 @@
                                 <nav id="primary-menu">
                                     <ul class="main-menu text-center">
                                         <li><a href="/">Home</a></li>
-                                        <li><a href="/fund">Fund Your Account</a></li>
+                                        <li><a href="/fund">Getting Started/About</a></li>
                                         <li><a href="/wallet">Wallet Balance</a></li>
                                         <li><a target="_blank" href="https://catocoin.net">Explore CatoCoin</a></li>
                                         <li><a href="/news">CatoCoin News</a></li>
@@ -204,7 +204,7 @@
                             <nav id="dropdown">
                                 <ul>
                                     <li><a href="/">Home</a></li>
-                                    <li><a href="/fund-your-account">Fund Your Account</a></li>
+                                    <li><a href="/fund">Getting Started/About</a></li>
                                     <li><a href="/wallet">Wallet Balance</a></li>
                                     <li><a href="/download">Explore CatoCoin</a></li>
                                     <li><a href="/news">CatoCoin News</a></li>
