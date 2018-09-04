@@ -68,12 +68,12 @@
 														<table class="table table-bordered text-center">
 																<thead>
 																<tr>
-																		<th class="text-center">#</th>
+                                    <th class="text-center">Confirmed</th>
+																		<th class="text-center">Tx ID</th>
 																		<th class="text-center">Date</th>
 																		<th class="text-center">Type</th>
 																		<th class="text-center">Account</th>
 																		<th class="text-center">Amount</th>
-                                    <th class="text-center">Confirmed</th>
 																</tr>
 																</thead>
 																<tbody id="tbody_transactions">
@@ -193,6 +193,7 @@ $('.nav-tabs li a').click(function(){
 	console.log(tab);
 
 	if (tab == 'transactions'){
+    $('#tbody_transactions').html('');
 		$('.loader').show();
 		jQuery.post('/gettransactions', function(res, status){
 			html = '';
@@ -202,37 +203,43 @@ $('.nav-tabs li a').click(function(){
         console.log('transaction', transaction);
         if (transaction.confirmations >= 15){
           html = html + '<tr>\
+              <td style="color:green">&#10004;</td>\
               <td scope="row">'+ transaction['txid'] +'</td>' +
               '<td>'+ transaction['datetime'] +'</td>' +
               '<td>'+ transaction['type'] +'</td>' +
               '<td>'+ transaction['account'] +'</td>' +
               '<td>'+ transaction['amount'] +'</td>' +
-              '<td style="color:green">&#10004;</td>\
-          </tr>';
+          '</tr>';
         } else {
           html = html + '<tr>\
+              <td>'+ transaction['confirmations'] + '</td> \
               <td scope="row">'+ transaction['txid'] +'</td>' +
               '<td>'+ transaction['datetime'] +'</td>' +
               '<td>'+ transaction['type'] +'</td>' +
               '<td>'+ transaction['account'] +'</td>' +
               '<td>'+ transaction['amount'] +'</td>' +
-              '<td>'+ transaction['confirmations'] +'</td>\
-          </tr>';
+          '</tr>';
         }
 			}
 			$('#tbody_transactions').html(html);
 			$('.loader').hide();
 		});
 	} else if (tab == 'masternodes') {
+    $('#tbody_masternodes').html('');
 		$('.loader').show();
 		jQuery.post('/getmasternodestatus', function(res, status){
 			html = '';
 			for (i in res.masternode_data){
 				console.log(res.masternode_data[i]);
 				masternode = res.masternode_data[i];
+        address = masternode['address'];
+        ip = address.split(':')[0];
+        port = address.split(':')[1];
+        str = ip.replace(/[0-9]/g, "X");
+        address = [str, port].join(':');
 				html = html + '<tr>' +
 												'<td>'+masternode['alias']+'</td>' +
-												'<td>'+masternode['address']+'</td>' +
+												'<td>'+address+'</td>' +
 												'<td>'+masternode['version'] +'</td>' +
 												'<td>3150</td>'+
 												'<td>'+ masternode['status']+'</td>' +
@@ -245,6 +252,7 @@ $('.nav-tabs li a').click(function(){
 			$('.loader').hide();
 		});
 	} else if (tab == 'addresses') {
+    $('#tbody_addresses').html('');
 		$('.loader').show();
 		jQuery.post('/getaddresses', function(res, status){
 			html = '';

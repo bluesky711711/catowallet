@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('content')
+<style>
+
+.SandboxRoot.env-bp-970 .timeline-Tweet-text {
+  font-size:25px !important;
+}
+</style>
 <section id="page-content" class="page-wrapper" style="padding:50px 0px">
             <div class="about-sheltek-area ptb-115" style="padding-bottom: 0px !important;">
                 <div class="container">
@@ -21,4 +27,9 @@
                 </div>
             </div>
 </section>
+<script>
+$(document).ready(function(){
+  $('.SandboxRoot.env-bp-970 .timeline-Tweet-text').css('font-size', '25px');
+});
+</script>
 @endsection

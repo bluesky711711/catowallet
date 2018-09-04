@@ -60,16 +60,30 @@ class WalletController extends Controller
         if ($client == null) continue;
         $walletinfo = $client->getwalletinfo();
         if ($walletinfo == null) continue;
-
         $transactions_item = $client->listtransactions("*", 50);
         foreach ($transactions_item as $tran){
           $tran['type'] = $tran['category'];
-          Log::info($tran);
           if ((isset($tran["generated"]) && $tran["generated"] == true) && $tran['vout'] == 2 && $tran['category']=="receive"){
             $tran['type'] = "Masternode Reward";
           }
+          if ($tran['type'] == 'receive') {
+            foreach ($transactions_item as $item){
+              if ($item['txid'] == $tran['txid'] && $item['category'] == 'send'){
+                $tran['type'] = 'Payment to yourself';
+                break;
+              }
+            }
+          } else if ($tran['type'] == 'send') {
+            foreach ($transactions_item as $item){
+              if ($item['txid'] == $tran['txid'] && $item['category'] == 'receive'){
+                $tran['type'] = 'Payment to yourself';
+                break;
+              }
+            }
+          }
           $tran['datetime'] = date('Y-m-d h:m:s', $tran['time']);
-          array_push($transactions, $tran);
+          if ($tran['type'] != "Payment to yourself")
+            array_push($transactions, $tran);
         }
       }
       return array('transactions' => $transactions, 'connection' => $walletinfo);

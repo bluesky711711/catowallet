@@ -323,10 +323,6 @@
 
     <script src='http://www.google.com/recaptcha/api.js'></script>
 
-
-
-
-
     <script>
         $(document).ready(function(){
             $("#log1").click(function(){
