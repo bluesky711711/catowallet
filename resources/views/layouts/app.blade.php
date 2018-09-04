@@ -214,7 +214,25 @@
                                     <li><a href="/wallet">Wallet Balance</a></li>
                                     <li><a href="/download">Explore CatoCoin</a></li>
                                     <li><a href="/news">CatoCoin News</a></li>
-                                    <li id="log2"><a href="/login">Login/Signup</a></li>
+                                    @if (Auth::guest())
+                                    <li><a href="/login">Log in/Sign up</a></li>
+                                    @else
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                        </a>
+
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li style="width: 100%;"><a href="/2fa">2FA</a></li>
+                                            <li>
+                                                <a href="javascript:void(0)" onclick="Logout(event)">Log Out</a>
+                                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    @endif
                                 </ul>
                             </nav>
                         </div>
