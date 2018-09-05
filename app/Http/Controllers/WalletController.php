@@ -56,9 +56,8 @@ class WalletController extends Controller
       $client = null;
       foreach ($wallets as $wallet) {
         //$wallet = Wallet::where('id', $user->wallet_id)->first();
-        Log::info($wallet->rpcpassword);
+
         $rpc_password = $this->my_simple_crypt($wallet->rpcpassword, 'd');
-        Log::info($rpc_password);
         $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$rpc_password.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
         if ($client == null) continue;
         $walletinfo = $client->getwalletinfo();
@@ -86,13 +85,30 @@ class WalletController extends Controller
         if ($walletinfo == null) continue;
         $transactions_item = $client->listtransactions('*', 750);
         foreach ($transactions_item as $tran){
+          $bagain = false;
+          foreach ($transactions as $item){
+            if ($item['txid'] == $tran['txid']){
+              $bagain = true;
+            }
+          }
+          if ($bagain == true){
+            continue;
+          }
+
           $tran['type'] = $tran['category'];
           if ((isset($tran["generated"]) && $tran["generated"] == true) && $tran['vout'] == 2 && $tran['category']=="receive"){
             $tran['type'] = "Masternode Reward";
           }
-          else if (isset($tran["generated"]) && $tran["generated"] == true && $tran['vout'] == 1 && $tran['category']=="receive")
+          else if (isset($tran["generated"]) && $tran["generated"] == true && $tran['vout'] == 2 && $tran['category']=="send")
           {
               $tran['type'] = "Minted";
+              $tran['amount'] = $tran['fee'] + $tran['amount'];
+              foreach ($transactions_item as $item1){
+                if (($item1['txid'] == $tran['txid']) && (isset($item1["generated"]) && $item1["generated"] == true) && $item1['vout'] == 1 && $item1['category']=="receive"){
+                  $tran['account'] = $item1['account'];
+                  break;
+                }
+              }
           } else {
             if ($tran['type'] == 'receive') {
               foreach ($transactions_item as $item){
@@ -112,19 +128,10 @@ class WalletController extends Controller
           }
 
           $tran['datetime'] = date('Y-m-d h:m:s', $tran['time']);
-          if ($tran['type'] != "Payment to yourself")
+          if ($tran['type'] != "Payment to yourself" )
           {
-            $bagain = false;
-            foreach ($transactions as $item){
-              if ($item['txid'] == $tran['txid']){
-                $bagain = true;
-              }
-            }
-            if ($bagain == false){
-              array_push($transactions, $tran);
-            }
+            array_push($transactions, $tran);
           }
-
         }
       }
       return array('transactions' => $transactions, 'connection' => $walletinfo);
@@ -146,7 +153,6 @@ class WalletController extends Controller
         $walletinfo = $client->getwalletinfo();
         if ($walletinfo == null) continue;
         $addresses = $client->listaddressgroupings();
-        Log::info($addresses);
         foreach ($addresses as $item) {
         foreach ($item as $address){
           if ($address[1] >= 1){
@@ -202,8 +208,6 @@ class WalletController extends Controller
       $walletinfo = null;
       foreach ($wallets as $wallet) {
         $rpc_password = $this->my_simple_crypt($wallet->rpcpassword, 'd');
-        Log::info($wallet->rpcpassword);
-        Log::info($rpc_password);
         $client = new jsonRPCClient('http://'.$wallet->rpcuser.':'.$rpc_password.'@'.$wallet->ip.':'.$wallet->rpcport.'/');
         if ($client == null) continue;
         $walletinfo = $client->getwalletinfo();
@@ -242,7 +246,6 @@ class WalletController extends Controller
 
          foreach ($transactions_item as $tran){
            $tran['type'] = $tran['category'];
-           Log::info($tran);
            if ((isset($tran["generated"]) && $tran["generated"] == true) && $tran['vout'] == 2 && $tran['category']=="receive"){
              $tran['type'] = "Masternode Reward";
            }

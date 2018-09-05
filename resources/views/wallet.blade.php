@@ -197,7 +197,7 @@ $('.nav-tabs li a').click(function(){
 		$('.loader').show();
 		jQuery.post('/gettransactions', function(res, status){
 			html = '';
-			for (i in res.transactions){
+			for (var i=res.transactions.length-1; i>=0; i--){
 				transaction = res.transactions[i];
         console.log('transaction', transaction);
         if (transaction.confirmations >= 15){
