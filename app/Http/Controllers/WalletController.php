@@ -106,7 +106,7 @@ class WalletController extends Controller
             }
           }
           $tran['datetime'] = date('Y-m-d h:m:s', $tran['time']);
-          if ($tran['type'] != "Payment to yourself")
+          //if ($tran['type'] != "Payment to yourself")
             array_push($transactions, $tran);
         }
       }
