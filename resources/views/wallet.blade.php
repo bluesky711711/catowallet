@@ -198,7 +198,6 @@ $('.nav-tabs li a').click(function(){
 		jQuery.post('/gettransactions', function(res, status){
 			html = '';
 			for (i in res.transactions){
-				console.log(res.transactions[i]);
 				transaction = res.transactions[i];
         console.log('transaction', transaction);
         if (transaction.confirmations >= 15){

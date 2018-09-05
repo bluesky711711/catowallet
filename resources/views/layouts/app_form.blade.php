@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/images/logo/logo.png">
+    <link rel="icon" href="/images/logo/favicon.ico" type="image/x-icon" />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <!-- nivo slider CSS -->

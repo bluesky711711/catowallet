@@ -84,27 +84,27 @@ class WalletController extends Controller
         if ($client == null) continue;
         $walletinfo = $client->getwalletinfo();
         if ($walletinfo == null) continue;
-        $transactions_item = $client->listtransactions("*", 750);
+        $transactions_item = $client->listtransactions('*', 20);
         foreach ($transactions_item as $tran){
           $tran['type'] = $tran['category'];
-          if ((isset($tran["generated"]) && $tran["generated"] == true) && $tran['vout'] == 2 && $tran['category']=="receive"){
-            $tran['type'] = "Masternode Reward";
-          }
-          if ($tran['type'] == 'receive') {
-            foreach ($transactions_item as $item){
-              if ($item['txid'] == $tran['txid'] && $item['category'] == 'send'){
-                $tran['type'] = 'Payment to yourself';
-                break;
-              }
-            }
-          } else if ($tran['type'] == 'send') {
-            foreach ($transactions_item as $item){
-              if ($item['txid'] == $tran['txid'] && $item['category'] == 'receive'){
-                $tran['type'] = 'Payment to yourself';
-                break;
-              }
-            }
-          }
+          // if ((isset($tran["generated"]) && $tran["generated"] == true) && $tran['vout'] == 2 && $tran['category']=="receive"){
+          //   $tran['type'] = "Masternode Reward";
+          // }
+          // if ($tran['type'] == 'receive') {
+          //   foreach ($transactions_item as $item){
+          //     if ($item['txid'] == $tran['txid'] && $item['category'] == 'send'){
+          //       $tran['type'] = 'Payment to yourself';
+          //       break;
+          //     }
+          //   }
+          // } else if ($tran['type'] == 'send') {
+          //   foreach ($transactions_item as $item){
+          //     if ($item['txid'] == $tran['txid'] && $item['category'] == 'receive'){
+          //       $tran['type'] = 'Payment to yourself';
+          //       break;
+          //     }
+          //   }
+          // }
           $tran['datetime'] = date('Y-m-d h:m:s', $tran['time']);
           //if ($tran['type'] != "Payment to yourself")
             array_push($transactions, $tran);
