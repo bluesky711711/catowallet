@@ -84,15 +84,15 @@ class WalletController extends Controller
         if ($client == null) continue;
         $walletinfo = $client->getwalletinfo();
         if ($walletinfo == null) continue;
-        $transactions_item = $client->listtransactions('*', 20);
+        $transactions_item = $client->listtransactions('*', 750);
         foreach ($transactions_item as $tran){
           $tran['type'] = $tran['category'];
           if ((isset($tran["generated"]) && $tran["generated"] == true) && $tran['vout'] == 2 && $tran['category']=="receive"){
             $tran['type'] = "Masternode Reward";
           }
-          if ((isset($tran["generated"]) && $tran["generated"] == true)
+          else if (isset($tran["generated"]) && $tran["generated"] == true && $tran['vout'] == 1 && $tran['category']=="receive")
           {
-            
+              $tran['type'] = "Minted";
           } else {
             if ($tran['type'] == 'receive') {
               foreach ($transactions_item as $item){
@@ -113,7 +113,18 @@ class WalletController extends Controller
 
           $tran['datetime'] = date('Y-m-d h:m:s', $tran['time']);
           if ($tran['type'] != "Payment to yourself")
-            array_push($transactions, $tran);
+          {
+            $bagain = false;
+            foreach ($transactions as $item){
+              if ($item['txid'] == $tran['txid']){
+                $bagain = true;
+              }
+            }
+            if ($bagain == false){
+              array_push($transactions, $tran);
+            }
+          }
+
         }
       }
       return array('transactions' => $transactions, 'connection' => $walletinfo);
