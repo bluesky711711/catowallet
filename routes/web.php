@@ -34,7 +34,7 @@ Route::post('/getwalletinfo', 'WalletController@getwalletinfo')->name('getwallet
 Route::post('/getmasternodestatus', 'WalletController@getmasternodestatus')->name('getmasternodestatus');
 Route::post('/getaddresses', 'WalletController@getaddresses')->name('getaddresses');
 Route::post('/gettransactions', 'WalletController@gettransactions')->name('gettransactions');
-
+Route::post('/contact', 'ContactController@contact')->name('contact');
 Route::post('/2faVerify', function () {
     return redirect(URL()->previous());
 })->name('2faVerify')->middleware('2fa');

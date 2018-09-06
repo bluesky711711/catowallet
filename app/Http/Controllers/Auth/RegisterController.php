@@ -82,7 +82,7 @@ class RegisterController extends Controller
         $user = $this->create($input)->toArray();
 
         Mail::send('emails.registration', $user, function($message) use ($user) {
-            $message->to('jjj092353@gmail.com');
+            $message->to('iamcatocoin@gmail.com');
             $message->from('catocoin@info.com');
             $message->subject('Registered on Wallet!');
         });
