@@ -110,7 +110,7 @@
                                             </a>
 
                                             <ul class="dropdown-menu" role="menu">
-                                                <li style="width: 100%;"><a href="/2fa">2FA</a></li>
+                                                <!-- <li style="width: 100%;"><a href="/2fa">2FA</a></li> -->
                                                 <li>
                                                     <a href="javascript:void(0)" onclick="Logout(event)">Log Out</a>
                                                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
@@ -224,7 +224,7 @@
                                         </a>
 
                                         <ul class="dropdown-menu" role="menu">
-                                            <li style="width: 100%;"><a href="/2fa">2FA</a></li>
+                                            <!-- <li style="width: 100%;"><a href="/2fa">2FA</a></li> -->
                                             <li>
                                                 <a href="javascript:void(0)" onclick="Logout(event)">Log Out</a>
                                                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">

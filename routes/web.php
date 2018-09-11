@@ -24,6 +24,8 @@ Route::get('/fund', 'HomeController@fund')->name('fund');
 Route::get('/news', 'HomeController@news')->name('news');
 Route::get('/download', 'HomeController@download')->name('download');
 Route::get('/complete-registration', 'Auth\RegisterController@completeRegistration');
+Route::get('/user/activation/{token}', 'Auth\RegisterController@userActivation');
+Route::get('/user/reactivation/{id}', 'Auth\RegisterController@ResendActivation');
 
 Route::get('/2fa','PasswordSecurityController@show2faForm');
 Route::post('/generate2faSecret','PasswordSecurityController@generate2faSecret')->name('generate2faSecret');

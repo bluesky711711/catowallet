@@ -144,6 +144,11 @@
                                                       <span style="font-weight:bold;">{{ $message }}</span>
                                                   </div>
                                                 @endif
+                                                @if ($message = Session::get('activation_warning'))
+                                                  <div style="color:#cf0000;background-color:#f8f8f8;padding:10px 30px 10px 30px;border-bottom: 1px solid #eee">
+                                                      <span style="font-weight:bold;">{{ $message }} <a href="/user/reactivation/{{Session::get('activation_id')}}" style="color:blue;margin-left:20px">Resend</a></span>
+                                                  </div>
+                                                @endif
                                                 <input type="email" name="email" placeholder="Email Address">
                                                 @if ($errors->has('email'))
                                                     <span class="mdl-textfield__error">{{ $errors->first('email') }}</span>

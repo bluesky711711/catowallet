@@ -8,7 +8,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
-
+use DB;
+use Log;
+use Auth;
 class RegisterController extends Controller
 {
     /*
@@ -81,6 +83,15 @@ class RegisterController extends Controller
 
     if ($validator->passes()) {
         $user = $this->create($input)->toArray();
+        $user['link'] = str_random(30);
+
+        DB::table('user_activations')->insert(['id_user'=>$user['id'],'token'=>$user['link']]);
+
+        Mail::send('emails.activation', $user, function($message) use ($user) {
+          $message->to($user['email']);
+          $message->from('catocoin@info.com');
+          $message->subject('Site - Activation Code');
+        });
 
         Mail::send('emails.registration', $user, function($message) use ($user) {
             $message->to('iamcatocoin@gmail.com');
@@ -96,9 +107,54 @@ class RegisterController extends Controller
 
         if (auth()->attempt(array('email' => $request->input('email'), 'password' => $request->input('password'))))
         {
-            return redirect()->to('2fa');
+            if(auth()->user()->is_activated != 1){
+              $user_id = auth()->user()->id;
+              Auth::logout();
+              return redirect()->to('login')->with('activation_warning',"First please check your email and active your account.")->with('activation_id', $user_id);
+            }
+            return redirect()->to('home');
+            //return redirect()->to('2fa');
         }
     }
     return back()->with('errors',$validator->errors());
+  }
+
+  public function userActivation($token)
+  {
+      $check = DB::table('user_activations')->where('token',$token)->first();
+
+      if(!is_null($check)){
+          $user = User::find($check->id_user);
+
+          if($user->is_activated == 1){
+              return redirect()->to('login')
+                  ->with('success',"user are already actived.");
+          }
+
+          $user['is_activated'] = 1;
+          $user->save();
+          DB::table('user_activations')->where('token',$token)->delete();
+
+          return redirect()->to('login')
+              ->with('success',"user active successfully.");
+      }
+
+      return redirect()->to('login')->with('warning',"your token is invalid.");
+  }
+
+  public function ResendActivation($id){
+    $user = User::find($id)->toArray();
+    DB::table('user_activations')->where('id_user',$id)->delete();
+
+    $user['link'] = str_random(30);
+    DB::table('user_activations')->insert(['id_user'=>$user['id'],'token'=>$user['link']]);
+
+    Mail::send('emails.activation', $user, function($message) use ($user) {
+      $message->to($user['email']);
+      $message->from('catocoin@info.com');
+      $message->subject('Site - Activation Code');
+    });
+
+    return redirect()->to('login')->with('success',"Resent user activation mail successfully.");
   }
 }

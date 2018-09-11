@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\User;
 use Log;
+use Auth;
 class LoginController extends Controller
 {
     /*
@@ -49,7 +50,12 @@ class LoginController extends Controller
 
          if (auth()->attempt(array('email' => $request->input('email'), 'password' => $request->input('password'))))
          {
-             return redirect()->to('/home');
+            if(auth()->user()->is_activated != 1){
+              $user_id = auth()->user()->id;
+              Auth::logout();
+              return back()->with('activation_warning',"First please active your account.")->with('activation_id', $user_id);
+            }
+            return redirect()->to('/home');
          }else{
              return back()->with('error','your username and password are wrong.');
          }
